@@ -1,0 +1,2705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#' >
+	<!ENTITY xml 'http://www.w3.org/XML/1998/namespace#' >
+	<!ENTITY xlink 'http://www.w3.org/1999/xlink#' >
+	<!ENTITY owl 'http://www.w3.org/2002/07/owl#' >
+	<!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#' >
+	<!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#' >
+]>
+<rdf:RDF xmlns:fcn="http://www.liujinhang.cn/paper/ifc/xsd2owl-functions.xsl"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xlink="http://www.w3.org/1999/xlink#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:base="http://www.omg.org/spec/BPMN/20100524/MODEL"
+         xml:base="http://www.omg.org/spec/BPMN/20100524/MODEL">
+   <owl:Ontology rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL">
+      <rdfs:comment>BPMN 2.0</rdfs:comment>
+   </owl:Ontology>
+   <owl:ObjectProperty rdf:ID="any"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#ordering"/>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Parallel">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#ordering"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Sequential">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#ordering"/>
+   </owl:NamedIndividual>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#associationDirection"/>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#None">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#associationDirection"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#One">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#associationDirection"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Both">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#associationDirection"/>
+   </owl:NamedIndividual>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#loopType"/>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#None">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#loopType"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Standard">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#loopType"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#MultiInstanceSequential">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#loopType"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#MultiInstanceParallel">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#loopType"/>
+   </owl:NamedIndividual>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#eventGatewayType"/>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Exclusive">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventGatewayType"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Parallel">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventGatewayType"/>
+   </owl:NamedIndividual>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#gatewayDirection"/>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Unspecified">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#gatewayDirection"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Converging">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#gatewayDirection"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Diverging">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#gatewayDirection"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Mixed">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#gatewayDirection"/>
+   </owl:NamedIndividual>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#implementation"/>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#unspecified">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#implementation"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#WebService">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#implementation"/>
+   </owl:NamedIndividual>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#itemKind"/>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Information">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#itemKind"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Physical">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#itemKind"/>
+   </owl:NamedIndividual>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#behavior"/>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#None">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#behavior"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#One">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#behavior"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#All">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#behavior"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Complex">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#behavior"/>
+   </owl:NamedIndividual>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#processType"/>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#None">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#processType"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Public">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#processType"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Private">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#processType"/>
+   </owl:NamedIndividual>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#direction"/>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#None">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#direction"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Forward">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#direction"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Backward">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#direction"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Both">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#direction"/>
+   </owl:NamedIndividual>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#method"/>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Compensate">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#method"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Image">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#method"/>
+   </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#Store">
+      <rdf:type rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#method"/>
+   </owl:NamedIndividual>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasIoSpecification"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasProperty"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataInputAssociation"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataOutputAssociation"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasResourceRole"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasLoopCharacteristics"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#isForCompensation"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#startQuantity"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#completionQuantity"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#default"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#activity">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#flowNode"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasIoSpecification"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#ioSpecification"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasProperty"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#property"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataInputAssociation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataInputAssociation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataOutputAssociation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataOutputAssociation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasResourceRole"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#resourceRole"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasLoopCharacteristics"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#loopCharacteristics"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#isForCompensation"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#startQuantity"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#completionQuantity"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#default"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCompletionCondition"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#cancelRemainingInstances"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasOrdering"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#adHocSubProcess">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#subProcess"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCompletionCondition"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#cancelRemainingInstances"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasOrdering"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#ordering"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#artifact">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasFrom"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasTo"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#assignment">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasFrom"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasTo"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#sourceRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#targetRef"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasAssociationDirection"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#association">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#artifact"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#sourceRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#targetRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasAssociationDirection"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#associationDirection"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#auditing">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDocumentation"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasExtensionElements"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#id"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDocumentation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#documentation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasExtensionElements"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#extensionElements"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#id"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDocumentation"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasExtensionElements"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#id"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElementWithMixedContent">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDocumentation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#documentation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasExtensionElements"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#extensionElements"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#id"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#cancelActivity"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#attachedToRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#boundaryEvent">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#catchEvent"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#cancelActivity"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#attachedToRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasImplementation"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#businessRuleTask">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#task"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasImplementation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#implementation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#supportedInterfaceRef"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasIoSpecification"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasIoBinding"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#callableElement">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#supportedInterfaceRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasIoSpecification"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#ioSpecification"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasIoBinding"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#ioBinding"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#calledElement"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#callActivity">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#activity"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#calledElement"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasParticipantAssociation"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#calledChoreographyRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#callChoreography">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#choreographyActivity"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasParticipantAssociation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#participantAssociation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#calledChoreographyRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasParticipantAssociation"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#calledCollaborationRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#callConversation">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#conversationNode"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasParticipantAssociation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#participantAssociation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#calledCollaborationRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#cancelEventDefinition">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinition"/>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataOutput"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataOutputAssociation"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasOutputSet"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasEventDefinition"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinitionRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#parallelMultiple"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#catchEvent">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#event"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataOutput"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataOutput"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataOutputAssociation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataOutputAssociation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasOutputSet"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#outputSet"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasEventDefinition"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinition"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinitionRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#parallelMultiple"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCategoryValue"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#category">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCategoryValue"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#categoryValue"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#value"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#categoryValue">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#value"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasFlowElement"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#choreography">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#collaboration"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasFlowElement"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#flowElement"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#participantRef"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCorrelationKey"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#initiatingParticipantRef"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasLoopType"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#choreographyActivity">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#flowNode"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#participantRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCorrelationKey"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationKey"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#initiatingParticipantRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasLoopType"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#loopType"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#messageFlowRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#choreographyTask">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#choreographyActivity"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#messageFlowRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasParticipant"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasMessageFlow"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasArtifact"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasConversationNode"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasConversationAssociation"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasParticipantAssociation"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasMessageFlowAssociation"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCorrelationKey"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#choreographyRef"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasConversationLink"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#isClosed"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#collaboration">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasParticipant"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#participant"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasMessageFlow"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#messageFlow"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasArtifact"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#artifact"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasConversationNode"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#conversationNode"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasConversationAssociation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#conversationAssociation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasParticipantAssociation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#participantAssociation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasMessageFlowAssociation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#messageFlowAssociation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCorrelationKey"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationKey"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#choreographyRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasConversationLink"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#conversationLink"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#isClosed"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#waitForCompletion"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#activityRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#compensateEventDefinition">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinition"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#waitForCompletion"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#activityRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCondition"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasEvent"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#complexBehaviorDefinition">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCondition"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#formalExpression"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasEvent"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#implicitThrowEvent"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasActivationCondition"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#default"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#complexGateway">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#gateway"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasActivationCondition"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#default"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCondition"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#conditionalEventDefinition">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinition"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCondition"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#conversation">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#conversationNode"/>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#innerConversationNodeRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#outerConversationNodeRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#conversationAssociation">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#innerConversationNodeRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#outerConversationNodeRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#sourceRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#targetRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#conversationLink">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#sourceRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#targetRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#participantRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#messageFlowRef"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCorrelationKey"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#conversationNode">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#participantRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#messageFlowRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCorrelationKey"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationKey"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationPropertyRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationKey">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationPropertyRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCorrelationPropertyRetrievalExpression"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#type"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationProperty">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCorrelationPropertyRetrievalExpression"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationPropertyRetrievalExpression"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#type"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataPath"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationPropertyRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationPropertyBinding">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataPath"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#formalExpression"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationPropertyRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasMessagePath"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#messageRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationPropertyRetrievalExpression">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasMessagePath"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#formalExpression"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#messageRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCorrelationPropertyBinding"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationKeyRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationSubscription">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCorrelationPropertyBinding"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationPropertyBinding"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationKeyRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#sourceRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#targetRef"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasTransformation"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasAssignment"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#dataAssociation">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#sourceRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#targetRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasTransformation"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#formalExpression"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasAssignment"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#assignment"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataState"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#itemSubjectRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#isCollection"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#dataInput">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataState"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataState"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#itemSubjectRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#isCollection"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#dataInputAssociation">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataAssociation"/>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataState"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#itemSubjectRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#isCollection"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#dataObject">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#flowElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataState"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataState"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#itemSubjectRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#isCollection"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataState"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#itemSubjectRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#dataObjectRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#dataObjectReference">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#flowElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataState"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataState"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#itemSubjectRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataObjectRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataState"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#itemSubjectRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#isCollection"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#dataOutput">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataState"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataState"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#itemSubjectRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#isCollection"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#dataOutputAssociation">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataAssociation"/>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#dataState">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataState"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#capacity"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#isUnlimited"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#itemSubjectRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#dataStore">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataState"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataState"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#capacity"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#isUnlimited"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#itemSubjectRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataState"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#itemSubjectRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#dataStoreRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#dataStoreReference">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#flowElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataState"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataState"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#itemSubjectRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataStoreRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#id"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#textFormat"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#documentation">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#id"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#textFormat"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#endEvent">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#throwEvent"/>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#endPoint">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#errorCode"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#structureRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#error">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#errorCode"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#structureRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#errorRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#errorEventDefinition">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinition"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#errorRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#escalationCode"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#structureRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#escalation">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#escalationCode"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#structureRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#escalationRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#escalationEventDefinition">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinition"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#escalationRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasProperty"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#event">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#flowNode"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasProperty"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#property"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#instantiate"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasEventGatewayType"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#eventBasedGateway">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#gateway"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#instantiate"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasEventGatewayType"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventGatewayType"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinition">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#default"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#exclusiveGateway">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#gateway"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#default"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#expression">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElementWithMixedContent"/>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDocumentation"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#definition"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#mustUnderstand"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#extension">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDocumentation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#documentation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#definition"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#mustUnderstand"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#extensionElements"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasAuditing"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasMonitoring"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#categoryValueRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#flowElement">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasAuditing"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#auditing"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasMonitoring"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#monitoring"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#categoryValueRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#incoming"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#outgoing"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#flowNode">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#flowElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#incoming"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#outgoing"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#language"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#evaluatesToTypeRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#formalExpression">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#language"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#evaluatesToTypeRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasGatewayDirection"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#gateway">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#flowNode"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasGatewayDirection"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#gatewayDirection"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasImplementation"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#globalBusinessRuleTask">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#globalTask"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasImplementation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#implementation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#initiatingParticipantRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#globalChoreographyTask">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#choreography"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#initiatingParticipantRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#globalConversation">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#collaboration"/>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#globalManualTask">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#globalTask"/>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasScript"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#scriptLanguage"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#globalScriptTask">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#globalTask"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasScript"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#script"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#scriptLanguage"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasResourceRole"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#globalTask">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#callableElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasResourceRole"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#resourceRole"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasRendering"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasImplementation"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#globalUserTask">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#globalTask"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasRendering"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rendering"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasImplementation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#implementation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#categoryValueRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#group">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#artifact"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#categoryValueRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#humanPerformer">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#performer"/>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#implicitThrowEvent">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#throwEvent"/>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#default"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#inclusiveGateway">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#gateway"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#default"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#dataInputRefs"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#optionalInputRefs"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#whileExecutingInputRefs"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#outputSetRefs"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#inputSet">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataInputRefs"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#optionalInputRefs"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#whileExecutingInputRefs"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#outputSetRefs"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasOperation"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#implementationRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#interface">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasOperation"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#operation"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#implementationRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#intermediateCatchEvent">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#catchEvent"/>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#intermediateThrowEvent">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#throwEvent"/>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#operationRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#inputDataRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#outputDataRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#ioBinding">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#operationRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#inputDataRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#outputDataRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataInput"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataOutput"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasInputSet"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasOutputSet"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#ioSpecification">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataInput"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataInput"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataOutput"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataOutput"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasInputSet"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#inputSet"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasOutputSet"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#outputSet"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#structureRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#isCollection"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasItemKind"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#itemDefinition">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#structureRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#isCollection"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasItemKind"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#itemKind"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasPartitionElement"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#flowNodeRef"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasChildLaneSet"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#partitionElementRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#lane">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasPartitionElement"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#flowNodeRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasChildLaneSet"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#laneSet"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#partitionElementRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasLane"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#laneSet">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasLane"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#lane"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#source"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#target"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#linkEventDefinition">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinition"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#source"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#target"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#loopCharacteristics">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#manualTask">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#task"/>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#itemRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#message">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#itemRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#operationRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#messageRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#messageEventDefinition">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinition"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#operationRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#messageRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#sourceRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#targetRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#messageRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#messageFlow">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#sourceRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#targetRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#messageRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#innerMessageFlowRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#outerMessageFlowRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#messageFlowAssociation">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#innerMessageFlowRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#outerMessageFlowRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#monitoring">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasLoopCardinality"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#loopDataInputRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#loopDataOutputRef"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasInputDataItem"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasOutputDataItem"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasComplexBehaviorDefinition"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCompletionCondition"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#isSequential"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasBehavior"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#oneBehaviorEventRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#noneBehaviorEventRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#multiInstanceLoopCharacteristics">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#loopCharacteristics"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasLoopCardinality"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#loopDataInputRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#loopDataOutputRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasInputDataItem"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataInput"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasOutputDataItem"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataOutput"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasComplexBehaviorDefinition"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#complexBehaviorDefinition"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCompletionCondition"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#isSequential"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasBehavior"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#behavior"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#oneBehaviorEventRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#noneBehaviorEventRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#inMessageRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#outMessageRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#errorRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#implementationRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#operation">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#inMessageRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#outMessageRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#errorRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#implementationRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#dataOutputRefs"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#optionalOutputRefs"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#whileExecutingOutputRefs"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#inputSetRefs"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#outputSet">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataOutputRefs"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#optionalOutputRefs"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#whileExecutingOutputRefs"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#inputSetRefs"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#parallelGateway">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#gateway"/>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#interfaceRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#endPointRef"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasParticipantMultiplicity"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#processRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#participant">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#interfaceRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#endPointRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasParticipantMultiplicity"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#participantMultiplicity"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#processRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#innerParticipantRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#outerParticipantRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#participantAssociation">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#innerParticipantRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#outerParticipantRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#minimum"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#maximum"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#participantMultiplicity">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#minimum"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#maximum"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#participantRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#partnerEntity">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#participantRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#participantRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#partnerRole">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#participantRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#performer">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#resourceRole"/>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#potentialOwner">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#humanPerformer"/>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasAuditing"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasMonitoring"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasProperty"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasLaneSet"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasFlowElement"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasArtifact"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasResourceRole"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCorrelationSubscription"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#supports"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasProcessType"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#isClosed"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#isExecutable"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#definitionalCollaborationRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#process">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#callableElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasAuditing"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#auditing"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasMonitoring"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#monitoring"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasProperty"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#property"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasLaneSet"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#laneSet"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasFlowElement"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#flowElement"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasArtifact"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#artifact"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasResourceRole"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#resourceRole"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasCorrelationSubscription"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#correlationSubscription"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#supports"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasProcessType"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#processType"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#isClosed"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#isExecutable"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#definitionalCollaborationRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataState"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#itemSubjectRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#property">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataState"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataState"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#itemSubjectRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasImplementation"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#instantiate"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#messageRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#operationRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#receiveTask">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#task"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasImplementation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#implementation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#instantiate"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#messageRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#operationRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#source"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#target"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#type"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDirection"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#relationship">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#source"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#target"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#type"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDirection"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#direction"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#rendering">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasResourceParameter"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#resource">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasResourceParameter"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#resourceParameter"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasExpression"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#resourceAssignmentExpression">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasExpression"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#type"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#isRequired"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#resourceParameter">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#type"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#isRequired"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasExpression"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#parameterRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#resourceParameterBinding">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasExpression"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#parameterRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#resourceRef"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasResourceParameterBinding"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasResourceAssignmentExpression"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#resourceRole">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#resourceRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasResourceParameterBinding"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#resourceParameterBinding"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasResourceAssignmentExpression"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#resourceAssignmentExpression"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#baseElement"/>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasScript"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#scriptFormat"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#scriptTask">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#task"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasScript"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#script"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#scriptFormat"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#script"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasImplementation"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#messageRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#operationRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#sendTask">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#task"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasImplementation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#implementation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#messageRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#operationRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasConditionExpression"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#sourceRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#targetRef"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#isImmediate"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#sequenceFlow">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#flowElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasConditionExpression"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#sourceRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#targetRef"/>
+            <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#isImmediate"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasImplementation"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#operationRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#serviceTask">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#task"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasImplementation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#implementation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#operationRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#structureRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#signal">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rootElement"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#name"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#structureRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#signalRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#signalEventDefinition">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinition"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#signalRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasLoopCondition"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#testBefore"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#loopMaximum"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#standardLoopCharacteristics">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#loopCharacteristics"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasLoopCondition"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#testBefore"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#loopMaximum"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#isInterrupting"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#startEvent">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#catchEvent"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#isInterrupting"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasFlowElement"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasArtifact"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#subChoreography">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#choreographyActivity"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasFlowElement"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#flowElement"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasArtifact"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#artifact"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasConversationNode"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#subConversation">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#conversationNode"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasConversationNode"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#conversationNode"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasLaneSet"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasFlowElement"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasArtifact"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#triggeredByEvent"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#subProcess">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#activity"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasLaneSet"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#laneSet"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasFlowElement"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#flowElement"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasArtifact"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#artifact"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#triggeredByEvent"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#task">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#activity"/>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#terminateEventDefinition">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinition"/>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasText"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#textFormat"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#textAnnotation">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#artifact"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasText"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#text"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#textFormat"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#text"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataInput"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataInputAssociation"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasInputSet"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasEventDefinition"/>
+   <owl:DatatypeProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinitionRef"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#throwEvent">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#event"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataInput"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataInput"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasDataInputAssociation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#dataInputAssociation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasInputSet"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#inputSet"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasEventDefinition"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinition"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinitionRef"/>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasTimeDate"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasTimeDuration"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasTimeCycle"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#timerEventDefinition">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#eventDefinition"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasTimeDate"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasTimeDuration"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasTimeCycle"/>
+            <owl:onClass rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#expression"/>
+            <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasMethod"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#transaction">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#subProcess"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasMethod"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#method"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasRendering"/>
+   <owl:ObjectProperty rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#hasImplementation"/>
+   <owl:Class rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#userTask">
+      <rdfs:subClassOf rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#task"/>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasRendering"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#rendering"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#hasImplementation"/>
+            <owl:allValuesFrom rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#implementation"/>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+</rdf:RDF>

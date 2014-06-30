@@ -1,11 +1,21 @@
 ﻿using Microsoft.Office.Interop.Visio;
+using OwlDotNetApi;
+using System;
+using System.Collections;
 
 namespace IdmProgressMapTranslateProgram
 {
     class Translator
     {
 
-        public void execute(string sourcePath)
+        private IOwlParser parser;
+        private IOwlGraph graph;
+
+        private IOwlNode task;
+
+        private string targetNamespace;
+
+        public void executeTranslation(string sourcePath)
         {
 
             Application application;
@@ -14,7 +24,7 @@ namespace IdmProgressMapTranslateProgram
 
             Document doc;
 
-            doc = application.Documents.OpenEx(sourcePath, (short)Microsoft.Office.Interop.Visio.VisOpenSaveArgs.visOpenCopy);
+            doc = application.Documents.OpenEx(sourcePath, (short)Microsoft.Office.Interop.Visio.VisOpenSaveArgs.visOpenCopyOfNaming);
 
             Page page;
 
@@ -45,6 +55,14 @@ namespace IdmProgressMapTranslateProgram
 
                 if (shape.Name.Contains("Task"))
                 {
+                    //Console.WriteLine(shape.Text);
+
+                    string a = shape.Text.Replace(@"\", "_").Replace("/", "_").Replace(" ", "_");
+
+                    Console.WriteLine(a);
+
+                    //OwlIndividual newTask = new OwlIndividual(targetNamespace + "#" + a, (OwlNode)this.task);
+                    //graph.Nodes.Add(newTask);
 
                 }
 
@@ -62,5 +80,30 @@ namespace IdmProgressMapTranslateProgram
 
         }
 
+        public void readOntology(string ontologyPath) 
+        {
+
+            parser = new OwlXmlParser();
+            graph = parser.ParseOwl(ontologyPath);
+
+            //target namespace
+            this.targetNamespace = graph.NameSpaces["xml:base"];
+
+            //task
+            this.task = graph.Nodes[this.targetNamespace + "#task"];
+
+
+        }
+
+        public void saveOntology(string ontologyPath)
+        {
+            IOwlGenerator generator = new OwlXmlGenerator();
+
+            generator.StopOnErrors = false;
+
+            generator.GenerateOwl(this.graph, ontologyPath);
+            
+        }
+    
     }
 }

@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdmProgressMapTranslateProgram", "IdmProgressMapTranslateProgram\IdmProgressMapTranslateProgram.csproj", "{666A59B2-F5BC-4511-8437-E3D233ECCF1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OwlDotNetApiTest", "OwlDotNetApiTest\OwlDotNetApiTest.csproj", "{5FE5EA5A-4653-40EA-B59F-0467E3E331D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{666A59B2-F5BC-4511-8437-E3D233ECCF1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{666A59B2-F5BC-4511-8437-E3D233ECCF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{666A59B2-F5BC-4511-8437-E3D233ECCF1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FE5EA5A-4653-40EA-B59F-0467E3E331D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FE5EA5A-4653-40EA-B59F-0467E3E331D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FE5EA5A-4653-40EA-B59F-0467E3E331D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FE5EA5A-4653-40EA-B59F-0467E3E331D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,14 +5,20 @@ namespace IdmProgressMapTranslateProgram
 {
     public class Program
     {
-        //http://www.omg.org/spec/BPMN/20100501/Semantic.xsd
         public static void Main(string[] args)
         {
 
             string sourcePath = Path.Combine(Environment.CurrentDirectory, @"source\progress map.vsdx");
 
+            string ontologyPath = Path.Combine(Environment.CurrentDirectory, @"source\bpmn2_OWL.owl");
+
+            string newOntologyPath = Path.Combine(Environment.CurrentDirectory, @"source\bpmn2.owl");
+
             Translator translator = new Translator();
-            translator.execute(sourcePath);
+
+            translator.readOntology(ontologyPath);
+            translator.executeTranslation(sourcePath);
+            translator.saveOntology(newOntologyPath);
 
             Console.ReadLine();
 
