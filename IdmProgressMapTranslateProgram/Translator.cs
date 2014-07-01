@@ -2,42 +2,138 @@
 using OwlDotNetApi;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace IdmProgressMapTranslateProgram
 {
-    class Translator
+    public class Translator
     {
+
+        private string _progressMapPath;
+        private string _inputOntologyPath;
+        private string _outputOntologyPath;
+
+        public string ProgressMapPath
+        {
+            get { return this._progressMapPath; }
+            set { this._progressMapPath = value; }
+        }
+
+        public string InputOntologyPath
+        {
+            get { return this._inputOntologyPath; }
+            set { this._inputOntologyPath = value; }
+        }
+
+        public string OutputOntologyPath
+        {
+            get { return this._outputOntologyPath; }
+            set { this._outputOntologyPath = value; }
+        }
+
+        private Application application;
+        private Document doc;
+        private Page page;
 
         private IOwlParser parser;
         private IOwlGraph graph;
 
         private IOwlNode task;
+        private IOwlNode lane;
+        private IOwlNode messageFlow;
+        private IOwlNode dataObject;
 
-        private string targetNamespace;
+        private GatewayFactory _gatewayFactory;
 
-        public void executeTranslation(string sourcePath)
+        public void execute()
+        {
+            this.readOntology();
+
+            this.prepareAutomation();
+
+            this.executeTranslation();
+
+            this.saveOntology();
+
+            this.finishAutomation();
+        }
+
+        private void prepareAutomation()
+        {
+            this.application = new Application();
+            this.doc = application.Documents.OpenEx(this._progressMapPath, (short)Microsoft.Office.Interop.Visio.VisOpenSaveArgs.visOpenCopyOfNaming);
+        }
+
+        private void executeTranslation()
         {
 
-            Application application;
-
-            application = new Application();
-
-            Document doc;
-
-            doc = application.Documents.OpenEx(sourcePath, (short)Microsoft.Office.Interop.Visio.VisOpenSaveArgs.visOpenCopyOfNaming);
-
-            Page page;
-
-            page = doc.Pages[1];
+            this.page = this.doc.Pages[1];
 
             for (int i = 1; i <= page.Shapes.Count; i++)
             {
                 Shape shape = page.Shapes[i];
 
-                //ROLE
+                //Pool / Lane => lane
                 if (shape.Name.Contains("Pool / Lane"))
                 {
+                    //OwlIndividual individual = new OwlIndividual(Constant.BPMN_TARGET_NAMESPACE + "#" + this.shift(shape.Text), (OwlNode)this.lane);
+                    //graph.Nodes.Add(individual);
+                }
 
+                //TODO
+                if (shape.Name.Contains("Box"))
+                {
+                    
+                }
+
+                //Gateway => gateway
+                if (shape.Name.Contains("Gateway"))
+                {
+                    IOwlIndividual gateway = this._gatewayFactory.CreateGateway(shape);
+                    graph.Nodes.Add(gateway);
+                }
+
+                if (shape.Name.Contains("Dynamic Connector"))
+                {
+
+                }
+
+                /*
+                Intermediate Event
+
+                End Event
+
+                Sequence Flow
+
+                Start Event
+
+                Collapsed Sub-Process
+                */
+
+                if (shape.Name.Contains("Task"))
+                {
+                    //OwlIndividual individual = new OwlIndividual(Constant.BPMN_TARGET_NAMESPACE + "#" + this.shift(shape.Text), (OwlNode)this.task);
+                    //graph.Nodes.Add(individual);
+                }
+
+                if (shape.Name.Contains("Sheet"))
+                {
+
+                    //Console.WriteLine(shape.Text);
+
+                    //OwlIndividual individual = new OwlIndividual(targetNamespace + "#" + this.shift(shape.Text), (OwlNode)this.sheet);
+                    //graph.Nodes.Add(individual);
+                }
+
+                if (shape.Name.Contains("Intermediate Event"))
+                {
+                    //Console.WriteLine(shape.Text);
+                }
+
+                if (shape.Name.Contains("Data Object"))
+                {
+                    //OwlIndividual individual = new OwlIndividual(Constant.BPMN_TARGET_NAMESPACE + "#" + this.shift(shape.Text), (OwlNode)this.dataObject);
+                    //graph.Nodes.Add(individual);
                 }
 
                 if (shape.Name.Contains("Message Flow"))
@@ -53,56 +149,39 @@ namespace IdmProgressMapTranslateProgram
 
                 }
 
-                if (shape.Name.Contains("Task"))
-                {
-                    //Console.WriteLine(shape.Text);
-
-                    string a = shape.Text.Replace(@"\", "_").Replace("/", "_").Replace(" ", "_");
-
-                    Console.WriteLine(a);
-
-                    //OwlIndividual newTask = new OwlIndividual(targetNamespace + "#" + a, (OwlNode)this.task);
-                    //graph.Nodes.Add(newTask);
-
-                }
-
-                if (shape.Name.Contains("Sheet"))
-                {
-
-                }
-
-                if (shape.Name.Contains("Data Object"))
-                {
-
-                }
-
             }
 
         }
 
-        public void readOntology(string ontologyPath) 
+
+
+        private void finishAutomation()
+        {
+            this.doc.Close();
+            this.application.Quit();
+        }
+
+        private void readOntology() 
         {
 
             parser = new OwlXmlParser();
-            graph = parser.ParseOwl(ontologyPath);
+            graph = parser.ParseOwl(this._inputOntologyPath);
 
-            //target namespace
-            this.targetNamespace = graph.NameSpaces["xml:base"];
+            Constant.BPMN_TARGET_NAMESPACE = graph.NameSpaces["xml:base"];
 
-            //task
-            this.task = graph.Nodes[this.targetNamespace + "#task"];
+            this._gatewayFactory = new GatewayFactory(this.graph);
 
+            //this.task = graph.Nodes[Constant.BPMN_TARGET_NAMESPACE + "#task"];
+            //this.dataObject = graph.Nodes[Constant.BPMN_TARGET_NAMESPACE + "#dataObject"];
+            //this.messageFlow = graph.Nodes[Constant.BPMN_TARGET_NAMESPACE + "#messageFlow"];
+            //this.lane = graph.Nodes[Constant.BPMN_TARGET_NAMESPACE + "#lane"];
 
         }
 
-        public void saveOntology(string ontologyPath)
+        private void saveOntology()
         {
             IOwlGenerator generator = new OwlXmlGenerator();
-
-            generator.StopOnErrors = false;
-
-            generator.GenerateOwl(this.graph, ontologyPath);
-            
+            generator.GenerateOwl(this.graph, this._outputOntologyPath);
         }
     
     }

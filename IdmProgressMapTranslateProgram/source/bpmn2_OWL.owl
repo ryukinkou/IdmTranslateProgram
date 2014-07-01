@@ -7,14 +7,14 @@
 	<!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#' >
 	<!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#' >
 ]>
-<rdf:RDF xmlns:fcn="http://www.liujinhang.cn/paper/ifc/xsd2owl-functions.xsl"
+<rdf:RDF
          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:xlink="http://www.w3.org/1999/xlink#"
          xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xmlns:base="http://www.omg.org/spec/BPMN/20100524/MODEL"
-         xml:base="http://www.omg.org/spec/BPMN/20100524/MODEL">
+         xmlns:base="http://www.omg.org/spec/BPMN/20100524/MODEL#"
+         xml:base="http://www.omg.org/spec/BPMN/20100524/MODEL#">
    <owl:Ontology rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL">
       <rdfs:comment>BPMN 2.0</rdfs:comment>
    </owl:Ontology>

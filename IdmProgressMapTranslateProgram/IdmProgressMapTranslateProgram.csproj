@@ -32,10 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OwlDotNetApi, Version=1.0.2435.18842, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\OwlDotNetApi.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,14 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constant.cs" />
+    <Compile Include="GatewayFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Translator.cs" />
+    <Compile Include="ToolKit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="source\bpmn2_OWL.owl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="source\progress map.vsdx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -80,6 +80,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="OwlDotNetApi.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OwlDotNetApi\OwlDotNetApi.csproj">
+      <Project>{1c6ffac7-7e9f-479b-b15c-bce7ab3653ac}</Project>
+      <Name>OwlDotNetApi</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,8 +6,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly: AssemblyTitle("")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("OwlDotNetApi")]
+[assembly: AssemblyDescription("This is an api for parsing and manipulating OWL ontologies. It is partially based on the Drive RDF Parser.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]
