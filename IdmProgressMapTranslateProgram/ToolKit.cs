@@ -79,6 +79,7 @@ namespace IdmProgressMapTranslateProgram
 
             string connector = "_";
 
+
             if (!string.IsNullOrEmpty(shape.Text.Trim()))
             {
                 connector = "_" + shape.Text.Trim() + "_";
