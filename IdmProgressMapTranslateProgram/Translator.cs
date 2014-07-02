@@ -78,9 +78,15 @@ namespace IdmProgressMapTranslateProgram
                     Console.WriteLine(info.Name);
 
                     //Find typedReference now
+                    //info.SetValue(this, new object());
+
+                    Assembly assembly = info.FieldType.Assembly;
+
+                    object o = assembly.CreateInstance(info.FieldType.FullName, false, BindingFlags.Public, null, new object[] { this._page, this._graph }, null, null);
 
                 }
             }
+
 
         }
 

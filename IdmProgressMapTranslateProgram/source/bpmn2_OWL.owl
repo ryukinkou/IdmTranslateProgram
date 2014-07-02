@@ -13,7 +13,7 @@
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:xlink="http://www.w3.org/1999/xlink#"
          xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xmlns:base="http://www.omg.org/spec/BPMN/20100524/MODEL#"
+         xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL#"
          xml:base="http://www.omg.org/spec/BPMN/20100524/MODEL#">
    <owl:Ontology rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL">
       <rdfs:comment>BPMN 2.0</rdfs:comment>
