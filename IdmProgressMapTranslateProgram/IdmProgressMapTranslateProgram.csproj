@@ -44,6 +44,8 @@
     <Compile Include="Constant.cs" />
     <Compile Include="Factory\GatewayFactory.cs" />
     <Compile Include="Factory\LaneFactory.cs" />
+    <Compile Include="Factory\StartEventFactory.cs" />
+    <Compile Include="Factory\EndEventFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Translator.cs" />

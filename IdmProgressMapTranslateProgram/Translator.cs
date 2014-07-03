@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Linq;
 
 namespace IdmProgressMapTranslateProgram
 {
@@ -39,10 +40,7 @@ namespace IdmProgressMapTranslateProgram
         private IOwlParser _parser;
         private IOwlGraph _graph;
 
-        private GatewayFactory _gatewayFactory;
-        private LaneFactory _laneFactory;
-        private TaskFactory _taskFactory;
-        private IntermediateCatchEventFactory _intermediateCatchEventFactory;
+        private List<BaseFactory> _factories;
 
         public void execute()
         {
@@ -60,33 +58,27 @@ namespace IdmProgressMapTranslateProgram
 
         private void readOntology()
         {
-            _parser = new OwlXmlParser();
-            _graph = this._parser.ParseOwl(this._inputOntologyPath);
+            this._parser = new OwlXmlParser();
+            this._graph = this._parser.ParseOwl(this._inputOntologyPath);
             Constant.BPMN_TARGET_NAMESPACE = _graph.NameSpaces["xmlns:bpmn"];
 
-            this._gatewayFactory = new GatewayFactory(this._page, this._graph);
-            this._laneFactory = new LaneFactory(this._page, this._graph);
-            this._taskFactory = new TaskFactory(this._page, this._graph);
+            this._factories = new List<BaseFactory>();
 
-            BindingFlags flag = BindingFlags.Instance | BindingFlags.NonPublic;
-            FieldInfo[] infos = typeof(Translator).GetFields(flag);
-
-            foreach (FieldInfo info in infos)
+            foreach (Type type in this.GetType().Assembly.DefinedTypes)
             {
-                if (info.FieldType.IsSubclassOf(typeof(BaseFactory)))
+                if (type.IsSubclassOf(typeof(BaseFactory)))
                 {
-                    Console.WriteLine(info.Name);
+                    object instance = type.Assembly.CreateInstance(
+                        type.FullName,
+                        false,
+                        BindingFlags.Instance | BindingFlags.Public,
+                        null,
+                        new object[] { this._page, this._graph },
+                        null, null);
 
-                    //Find typedReference now
-                    //info.SetValue(this, new object());
-
-                    Assembly assembly = info.FieldType.Assembly;
-
-                    object o = assembly.CreateInstance(info.FieldType.FullName, false, BindingFlags.Public, null, new object[] { this._page, this._graph }, null, null);
-
+                    this._factories.Add((BaseFactory)instance);
                 }
             }
-
 
         }
 
@@ -111,72 +103,43 @@ namespace IdmProgressMapTranslateProgram
             {
                 Shape shape = _page.Shapes[i];
 
-                //Pool / Lane => lane
                 if (shape.Name.Contains("Pool / Lane"))
                 {
-                    IOwlIndividual lane = this._laneFactory.Create(shape);
-                    this._graph.Nodes.Add(lane);
+                    this.CreateIndividual<LaneFactory>(shape);
                 }
-
-                //Gateway => gateway
-                if (shape.Name.Contains("Gateway"))
+                else if (shape.Name.Contains("Gateway"))
                 {
-                    IOwlIndividual gateway = this._gatewayFactory.Create(shape);
-                    this._graph.Nodes.Add(gateway);
+                    this.CreateIndividual<GatewayFactory>(shape);
                 }
-
-                //Task => task
-                if (shape.Name.Contains("Task"))
+                else if (shape.Name.Contains("Task"))
                 {
-                    IOwlIndividual task = this._taskFactory.Create(shape);
-                    this._graph.Nodes.Add(task);
+                    this.CreateIndividual<TaskFactory>(shape);
                 }
-
-                /*
-                End Event
-
-                Sequence Flow
-
-                Start Event
-
-                Collapsed Sub-Process
-                */
-
-                //Intermediate Event => Event
-                if (shape.Name.Contains("Intermediate Event"))
+                else if (shape.Name.Contains("Start Event"))
                 {
-                    //Console.WriteLine(shape.Text);
-
-                    
-
+                    this.CreateIndividual<StartEventFactory>(shape);
                 }
-
-                if (shape.Name.Contains("Data Object"))
+                else if (shape.Name.Contains("End Event"))
                 {
-                    //OwlIndividual individual = new OwlIndividual(Constant.BPMN_TARGET_NAMESPACE + "#" + this.shift(shape.Text), (OwlNode)this.dataObject);
-                    //graph.Nodes.Add(individual);
+                    this.CreateIndividual<EndEventFactory>(shape);
                 }
-
-                if (shape.Name.Contains("Message Flow"))
+                else if (shape.Name.Contains("Intermediate Event"))
                 {
-
-                    int sourceID = (int)shape.GluedShapes(VisGluedShapesFlags.visGluedShapesIncoming2D, "", null).GetValue(0);
-
-                    int destinationID = (int)shape.GluedShapes(VisGluedShapesFlags.visGluedShapesOutgoing2D, "", null).GetValue(0);
-
-                    Shape sourceShape = _page.Shapes.get_ItemFromID(sourceID);
-
-                    Shape destinationShape = _page.Shapes.get_ItemFromID(destinationID);
-
+                    this.CreateIndividual<IntermediateCatchEventFactory>(shape);
                 }
-
-                //TODO
-                if (shape.Name.Contains("Box"))
+                else if (shape.Name.Contains("Data Object"))
                 {
-
                 }
-
-                if (shape.Name.Contains("Dynamic Connector"))
+                else if (shape.Name.Contains("Message Flow"))
+                {
+                }
+                else if (shape.Name.Contains("Sequence Flow"))
+                {
+                }
+                else if (shape.Name.Contains("Box"))
+                {
+                }
+                else if (shape.Name.Contains("Dynamic Connector"))
                 {
                     /* TODO
                     Console.WriteLine(
@@ -185,11 +148,14 @@ namespace IdmProgressMapTranslateProgram
                         ToolKit.QueryFlowRelationship(this._page, shape, VisGluedShapesFlags.visGluedShapesOutgoing2D).Text);
                      */
                 }
-
-                //DO NOTHING
-                if (shape.Name.Contains("Sheet"))
+                else if (shape.Name.Contains("Sheet"))
                 {
+                    //BETTER DO NOTHING
                     //Console.WriteLine(shape.Text);
+                }
+                else
+                {
+                    Console.WriteLine(shape.Name);
                 }
 
             }
@@ -204,7 +170,14 @@ namespace IdmProgressMapTranslateProgram
             this._application.Quit();
         }
 
-
+        private void CreateIndividual<T>(Shape shape)
+        {
+            IOwlIndividual individual = (
+                from factory in this._factories.ToArray()
+                where factory.GetType() == typeof(T)
+                select factory).First().Create(shape);
+            this._graph.Nodes.Add(individual);
+        }
     
     }
 }
