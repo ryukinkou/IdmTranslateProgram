@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace IdmProgressMapTranslateProgram.Factory
 {
-    public class TaskFactory : BaseFactory
+    public class MessageFlowFactory : BaseFactory
     {
 
-        public TaskFactory(Page page, IOwlGraph graph)
+        public MessageFlowFactory(Page page, IOwlGraph graph)
             : base(page, graph)
         {
+
 
 
         }
@@ -21,8 +22,8 @@ namespace IdmProgressMapTranslateProgram.Factory
         public override IOwlIndividual Create(Shape shape)
         {
             IOwlIndividual individual = new OwlIndividual(
-                ToolKit.GetFullName(Constant.BPMN_TARGET_NAMESPACE, ToolKit.StringShift(shape.Text)),
-                (OwlNode)base._graph.Nodes[ToolKit.GetFullName(Constant.BPMN_TARGET_NAMESPACE, "task")]);
+                ToolKit.GetFullName(Constant.BPMN_TARGET_NAMESPACE, ToolKit.FlowElementNaming(shape)),
+                (OwlNode)base._graph.Nodes[ToolKit.GetFullName(Constant.BPMN_TARGET_NAMESPACE, "messageFlow")]);
 
             individual = base.BuildProperty(shape, individual);
 
