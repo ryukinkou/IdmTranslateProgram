@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IdmProgressMapTranslateProgram
+namespace IdmProgressMapTranslateProgram.Factory
 {
     public class IntermediateCatchEventFactory : BaseFactory
     {

@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
+using IdmProgressMapTranslateProgram.Factory;
 
 namespace IdmProgressMapTranslateProgram
 {
@@ -129,24 +130,33 @@ namespace IdmProgressMapTranslateProgram
                 }
                 else if (shape.Name.Contains("Data Object"))
                 {
+                    this.CreateIndividual<DataObjectFactory>(shape);
                 }
                 else if (shape.Name.Contains("Message Flow"))
                 {
+                    this.CreateIndividual<MessageFlowFactory>(shape);
                 }
                 else if (shape.Name.Contains("Sequence Flow"))
                 {
+                    this.CreateIndividual<SequenceFlowFactory>(shape);
                 }
-                else if (shape.Name.Contains("Box"))
+                else if (shape.Name.Contains("Expanded Sub-Process"))
                 {
+                    //TODO
+                }
+                else if (shape.Name.Contains("Collapsed Sub-Process"))
+                {
+                    //TODO
                 }
                 else if (shape.Name.Contains("Dynamic Connector"))
                 {
-                    /* TODO
-                    Console.WriteLine(
-                        ToolKit.QueryFlowRelationship(this._page, shape, VisGluedShapesFlags.visGluedShapesIncoming2D).Text +
-                        " => " +
-                        ToolKit.QueryFlowRelationship(this._page, shape, VisGluedShapesFlags.visGluedShapesOutgoing2D).Text);
-                     */
+                    //BETTER DO NOTHING
+                    //ToolKit.SysoutFlowRelationship(shape);
+                }
+                else if (shape.Name.Contains("Box"))
+                {
+                    //BETTER DO NOTHING
+                    //Console.WriteLine(shape.Text);
                 }
                 else if (shape.Name.Contains("Sheet"))
                 {

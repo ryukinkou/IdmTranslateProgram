@@ -54,14 +54,14 @@ namespace IdmProgressMapTranslateProgram
 
         }
 
-        public static Shape QueryFlowRelationship(Page page, Shape shape, VisGluedShapesFlags flag)
+        public static Shape QueryFlowRelationship(Shape shape, VisGluedShapesFlags flag)
         {
             Array idArray = shape.GluedShapes(flag, "", null);
 
             if (idArray.Length == 1)
             {
                 int id = (int)shape.GluedShapes(flag, "", null).GetValue(0);
-                Shape sourceShape = page.Shapes.get_ItemFromID(id);
+                Shape sourceShape = shape.ContainingPage.Shapes.get_ItemFromID(id);
                 return sourceShape;
             }
             else
@@ -70,22 +70,45 @@ namespace IdmProgressMapTranslateProgram
             }
         }
 
-        public static string FlowElementNaming(Page page, Shape shape)
+        public static string FlowElementNaming(Shape shape)
         {
 
-            Shape incoming = ToolKit.QueryFlowRelationship(page, shape, VisGluedShapesFlags.visGluedShapesIncoming2D);
+            Shape incoming = ToolKit.QueryFlowRelationship(shape, VisGluedShapesFlags.visGluedShapesIncoming2D);
 
-            Shape outgoing = ToolKit.QueryFlowRelationship(page, shape, VisGluedShapesFlags.visGluedShapesIncoming2D);
+            Shape outgoing = ToolKit.QueryFlowRelationship(shape,VisGluedShapesFlags.visGluedShapesIncoming2D);
 
-            string connector = "_";
-
+            string connector = "to";
 
             if (!string.IsNullOrEmpty(shape.Text.Trim()))
             {
-                connector = "_" + shape.Text.Trim() + "_";
+                connector = shape.Text.Trim();
+            }
+
+            if (!string.IsNullOrEmpty(incoming.Text))
+            {
+                connector = "_" + connector;
+            }
+
+            if (!string.IsNullOrEmpty(outgoing.Text))
+            {
+                connector = connector + "_";
             }
 
             return ToolKit.StringShift(incoming.Text) + connector + ToolKit.StringShift(outgoing.Text);
+        }
+
+        public static void SysoutFlowRelationship(Shape shape)
+        {
+
+            Console.WriteLine(
+                ToolKit.QueryFlowRelationship(
+                shape,
+                VisGluedShapesFlags.visGluedShapesIncoming2D).Text +
+                " => " +
+                ToolKit.QueryFlowRelationship(
+                shape,
+                VisGluedShapesFlags.visGluedShapesOutgoing2D).Text);
+
         }
 
     }

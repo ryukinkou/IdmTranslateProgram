@@ -67,10 +67,6 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OwlDotNetApi">
-      <Name>OwlDotNetApi</Name>
-      <HintPath>..\OwlDotNetApi\bin\Debug\OwlDotNetApi.dll</HintPath>
-    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -89,6 +85,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Content Include="App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OwlDotNetApi\OwlDotNetApi.csproj">
+      <Project>{1c6ffac7-7e9f-479b-b15c-bce7ab3653ac}</Project>
+      <Name>OwlDotNetApi</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -2,7 +2,7 @@
 using OwlDotNetApi;
 using System;
 
-namespace IdmProgressMapTranslateProgram
+namespace IdmProgressMapTranslateProgram.Factory
 {
     public abstract class BaseFactory
     {

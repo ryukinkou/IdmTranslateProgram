@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace IdmProgressMapTranslateProgram.Factory
 {
-    public class LaneFactory : BaseFactory
+    public class SequenceFlowFactory : BaseFactory
     {
 
-        public LaneFactory(Page page, IOwlGraph graph)
+        public SequenceFlowFactory(Page page, IOwlGraph graph)
             : base(page, graph)
         {
 
@@ -20,8 +20,8 @@ namespace IdmProgressMapTranslateProgram.Factory
         public override IOwlIndividual Create(Shape shape)
         {
             IOwlIndividual individual = new OwlIndividual(
-                ToolKit.GetFullName(Constant.BPMN_TARGET_NAMESPACE, ToolKit.StringShift(shape.Text)),
-                (OwlNode)base._graph.Nodes[ToolKit.GetFullName(Constant.BPMN_TARGET_NAMESPACE, "lane")]);
+                ToolKit.GetFullName(Constant.BPMN_TARGET_NAMESPACE, ToolKit.FlowElementNaming(shape)),
+                (OwlNode)base._graph.Nodes[ToolKit.GetFullName(Constant.BPMN_TARGET_NAMESPACE, "sequenceFlow")]);
 
             individual = base.BuildProperty(shape, individual);
 
