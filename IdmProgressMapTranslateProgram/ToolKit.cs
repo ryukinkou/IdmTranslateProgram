@@ -62,6 +62,15 @@ namespace IdmProgressMapTranslateProgram
             {
                 int id = (int)shape.GluedShapes(flag, "", null).GetValue(0);
                 Shape sourceShape = shape.ContainingPage.Shapes.get_ItemFromID(id);
+
+                foreach (Shape element in sourceShape.Shapes)
+                {
+                    if (element.Name.Contains("Data Object"))
+                    {
+                        //Console.WriteLine(element.Text);
+                    }
+                }
+
                 return sourceShape;
             }
             else
@@ -75,7 +84,7 @@ namespace IdmProgressMapTranslateProgram
 
             Shape incoming = ToolKit.QueryFlowRelationship(shape, VisGluedShapesFlags.visGluedShapesIncoming2D);
 
-            Shape outgoing = ToolKit.QueryFlowRelationship(shape,VisGluedShapesFlags.visGluedShapesIncoming2D);
+            Shape outgoing = ToolKit.QueryFlowRelationship(shape,VisGluedShapesFlags.visGluedShapesOutgoing2D);
 
             string connector = "to";
 
@@ -101,13 +110,15 @@ namespace IdmProgressMapTranslateProgram
         {
 
             Console.WriteLine(
+                "-- " +
                 ToolKit.QueryFlowRelationship(
                 shape,
                 VisGluedShapesFlags.visGluedShapesIncoming2D).Text +
                 " => " +
                 ToolKit.QueryFlowRelationship(
                 shape,
-                VisGluedShapesFlags.visGluedShapesOutgoing2D).Text);
+                VisGluedShapesFlags.visGluedShapesOutgoing2D).Text +
+                " --");
 
         }
 

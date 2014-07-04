@@ -49,6 +49,7 @@
     <Compile Include="Factory\EndEventFactory.cs" />
     <Compile Include="Factory\DataObjectFactory.cs" />
     <Compile Include="Factory\MessageFlowFactory.cs" />
+    <Compile Include="Factory\SubProcessFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Translator.cs" />

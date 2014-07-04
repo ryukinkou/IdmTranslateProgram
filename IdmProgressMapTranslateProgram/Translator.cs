@@ -103,71 +103,77 @@ namespace IdmProgressMapTranslateProgram
             for (int i = 1; i <= _page.Shapes.Count; i++)
             {
                 Shape shape = _page.Shapes[i];
+                this.makeShape(shape);
+            }
+        }
 
-                if (shape.Name.Contains("Pool / Lane"))
-                {
-                    this.CreateIndividual<LaneFactory>(shape);
-                }
-                else if (shape.Name.Contains("Gateway"))
-                {
-                    this.CreateIndividual<GatewayFactory>(shape);
-                }
-                else if (shape.Name.Contains("Task"))
-                {
-                    this.CreateIndividual<TaskFactory>(shape);
-                }
-                else if (shape.Name.Contains("Start Event"))
-                {
-                    this.CreateIndividual<StartEventFactory>(shape);
-                }
-                else if (shape.Name.Contains("End Event"))
-                {
-                    this.CreateIndividual<EndEventFactory>(shape);
-                }
-                else if (shape.Name.Contains("Intermediate Event"))
-                {
-                    this.CreateIndividual<IntermediateCatchEventFactory>(shape);
-                }
-                else if (shape.Name.Contains("Data Object"))
-                {
-                    this.CreateIndividual<DataObjectFactory>(shape);
-                }
-                else if (shape.Name.Contains("Message Flow"))
-                {
-                    this.CreateIndividual<MessageFlowFactory>(shape);
-                }
-                else if (shape.Name.Contains("Sequence Flow"))
-                {
-                    this.CreateIndividual<SequenceFlowFactory>(shape);
-                }
-                else if (shape.Name.Contains("Expanded Sub-Process"))
-                {
-                    //TODO
-                }
-                else if (shape.Name.Contains("Collapsed Sub-Process"))
-                {
-                    //TODO
-                }
-                else if (shape.Name.Contains("Dynamic Connector"))
-                {
-                    //BETTER DO NOTHING
-                    //ToolKit.SysoutFlowRelationship(shape);
-                }
-                else if (shape.Name.Contains("Box"))
-                {
-                    //BETTER DO NOTHING
-                    //Console.WriteLine(shape.Text);
-                }
-                else if (shape.Name.Contains("Sheet"))
-                {
-                    //BETTER DO NOTHING
-                    //Console.WriteLine(shape.Text);
-                }
-                else
-                {
-                    Console.WriteLine(shape.Name);
-                }
+        private void makeShape(Shape shape)
+        {
 
+            if (shape.Name.Contains("Pool / Lane"))
+            {
+                this.CreateIndividual<LaneFactory>(shape);
+            }
+            else if (shape.Name.Contains("Gateway"))
+            {
+                this.CreateIndividual<GatewayFactory>(shape);
+            }
+            else if (shape.Name.Contains("Task"))
+            {
+                this.CreateIndividual<TaskFactory>(shape);
+            }
+            else if (shape.Name.Contains("Start Event"))
+            {
+                this.CreateIndividual<StartEventFactory>(shape);
+            }
+            else if (shape.Name.Contains("End Event"))
+            {
+                this.CreateIndividual<EndEventFactory>(shape);
+            }
+            else if (shape.Name.Contains("Intermediate Event"))
+            {
+                this.CreateIndividual<IntermediateCatchEventFactory>(shape);
+            }
+            else if (shape.Name.Contains("Data Object"))
+            {
+                this.CreateIndividual<DataObjectFactory>(shape);
+            }
+            else if (shape.Name.Contains("Message Flow"))
+            {
+                this.CreateIndividual<MessageFlowFactory>(shape);
+            }
+            else if (shape.Name.Contains("Sequence Flow"))
+            {
+                this.CreateIndividual<SequenceFlowFactory>(shape);
+            }
+            else if (shape.Name.Contains("Expanded Sub-Process"))
+            {
+                this.CreateIndividual<SubProcessFactory>(shape);
+            }
+            else if (shape.Name.Contains("Collapsed Sub-Process"))
+            {
+                this.CreateIndividual<SubProcessFactory>(shape);
+            }
+            else if (shape.Name.Contains("Dynamic Connector"))
+            {
+                //BETTER DO NOTHING
+                //ToolKit.SysoutFlowRelationship(shape);
+            }
+            else if (shape.Name.Contains("Box"))
+            {
+                //BETTER DO NOTHING
+                //Console.WriteLine(shape.Text);
+            }
+            else if (shape.Name.Contains("Sheet"))
+            {
+                foreach (Shape shapeInside in shape.Shapes)
+                {
+                    this.makeShape(shapeInside);
+                }
+            }
+            else
+            {
+                //Console.WriteLine(shape.Name);
             }
 
         }
@@ -186,7 +192,15 @@ namespace IdmProgressMapTranslateProgram
                 from factory in this._factories.ToArray()
                 where factory.GetType() == typeof(T)
                 select factory).First().Create(shape);
-            this._graph.Nodes.Add(individual);
+
+            if (this._graph.Nodes[individual.ID] == null)
+            {
+                this._graph.Nodes.Add(individual);
+            }
+            else
+            {
+                Console.WriteLine(individual.ID);
+            }
         }
     
     }
