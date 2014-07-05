@@ -67,7 +67,7 @@ namespace IdmProgressMapTranslateProgram
 
             foreach (Type type in this.GetType().Assembly.DefinedTypes)
             {
-                if (type.IsSubclassOf(typeof(BaseFactory)))
+                if (type.IsAbstract == false && type.IsSubclassOf(typeof(BaseFactory)))
                 {
                     object instance = type.Assembly.CreateInstance(
                         type.FullName,
@@ -104,6 +104,26 @@ namespace IdmProgressMapTranslateProgram
             {
                 Shape shape = _page.Shapes[i];
                 this.makeShape(shape);
+            }
+
+            //relation ship generation
+            for (int i = 1; i <= _page.Shapes.Count; i++)
+            {
+                Shape shape = _page.Shapes[i];
+                this.makeRelationship(shape);
+            }
+
+        }
+
+        private void makeRelationship(Shape shape)
+        {
+            if (shape.Name.Contains("Message Flow"))
+            {
+                this.CreateRelationship<MessageFlowFactory>(shape);
+            }
+            else if (shape.Name.Contains("Sequence Flow"))
+            {
+                this.CreateRelationship<SequenceFlowFactory>(shape);
             }
         }
 
@@ -178,8 +198,6 @@ namespace IdmProgressMapTranslateProgram
 
         }
 
-
-
         private void finishAutomation()
         {
             this._document.Close();
@@ -197,10 +215,13 @@ namespace IdmProgressMapTranslateProgram
             {
                 this._graph.Nodes.Add(individual);
             }
-            else
-            {
-                Console.WriteLine(individual.ID);
-            }
+        }
+
+        private void CreateRelationship<T>(Shape shape)
+        {
+            (from factory in this._factories.ToArray() 
+             where factory.GetType() == typeof(T) && factory.GetType().IsSubclassOf(typeof(FlowFactory)) == true
+             select (FlowFactory)factory).First().BuildRelationship(shape);
         }
     
     }

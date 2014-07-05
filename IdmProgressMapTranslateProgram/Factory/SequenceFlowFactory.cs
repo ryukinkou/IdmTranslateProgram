@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IdmProgressMapTranslateProgram.Factory
 {
-    public class SequenceFlowFactory : BaseFactory
+    public class SequenceFlowFactory : FlowFactory
     {
 
         public SequenceFlowFactory(Page page, IOwlGraph graph)
@@ -26,6 +26,11 @@ namespace IdmProgressMapTranslateProgram.Factory
             individual = base.BuildProperty(shape, individual);
 
             return individual;
+        }
+
+        public override void BuildRelationship(Shape shape)
+        {
+            //ToolKit.SysoutFlowRelationship(shape);
         }
 
     }

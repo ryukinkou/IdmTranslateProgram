@@ -44,6 +44,7 @@
     <Compile Include="Constant.cs" />
     <Compile Include="Factory\GatewayFactory.cs" />
     <Compile Include="Factory\LaneFactory.cs" />
+    <Compile Include="Factory\FlowFactory.cs" />
     <Compile Include="Factory\SequenceFlowFactory.cs" />
     <Compile Include="Factory\StartEventFactory.cs" />
     <Compile Include="Factory\EndEventFactory.cs" />

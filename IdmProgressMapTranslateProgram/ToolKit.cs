@@ -54,72 +54,81 @@ namespace IdmProgressMapTranslateProgram
 
         }
 
-        public static Shape QueryFlowRelationship(Shape shape, VisGluedShapesFlags flag)
+        public static Shape[] QueryFlowRelationship(Shape shape, VisGluedShapesFlags flag)
         {
             Array idArray = shape.GluedShapes(flag, "", null);
 
-            if (idArray.Length == 1)
-            {
-                int id = (int)shape.GluedShapes(flag, "", null).GetValue(0);
-                Shape sourceShape = shape.ContainingPage.Shapes.get_ItemFromID(id);
+            List<Shape> shapes = new List<Shape>();
 
-                foreach (Shape element in sourceShape.Shapes)
-                {
-                    if (element.Name.Contains("Data Object"))
-                    {
-                        //Console.WriteLine(element.Text);
-                    }
-                }
-
-                return sourceShape;
-            }
-            else
+            foreach (int id in idArray)
             {
-                return null;
+                Shape gluedShape = shape.ContainingPage.Shapes.get_ItemFromID(id);
+                shapes.Add(gluedShape);
             }
+
+            return shapes.ToArray();
         }
 
         public static string FlowElementNaming(Shape shape)
         {
 
-            Shape incoming = ToolKit.QueryFlowRelationship(shape, VisGluedShapesFlags.visGluedShapesIncoming2D);
+            Shape incomingShape = ToolKit.QueryFlowRelationship(shape, VisGluedShapesFlags.visGluedShapesIncoming2D)[0];
 
-            Shape outgoing = ToolKit.QueryFlowRelationship(shape,VisGluedShapesFlags.visGluedShapesOutgoing2D);
+            Shape outgoingShape = ToolKit.QueryFlowRelationship(shape, VisGluedShapesFlags.visGluedShapesOutgoing2D)[0];
+
+            return ToolKit.FlowElementNaming(incomingShape, shape, outgoingShape);
+
+        }
+
+        public static string FlowElementNaming(Shape incomingShape, Shape connectorShape, Shape outgoingShape)
+        {
+
+            string prefix = incomingShape.Text;
+
+            string suffix = outgoingShape.Text;
 
             string connector = "to";
 
-            if (!string.IsNullOrEmpty(shape.Text.Trim()))
+            if (!string.IsNullOrEmpty(connectorShape.Text.Trim()))
             {
-                connector = shape.Text.Trim();
+                connector = connectorShape.Text.Trim();
             }
-
-            if (!string.IsNullOrEmpty(incoming.Text))
+            if (!string.IsNullOrEmpty(prefix))
             {
                 connector = "_" + connector;
             }
 
-            if (!string.IsNullOrEmpty(outgoing.Text))
+            if (!string.IsNullOrEmpty(suffix))
             {
                 connector = connector + "_";
             }
 
-            return ToolKit.StringShift(incoming.Text) + connector + ToolKit.StringShift(outgoing.Text);
+            return ToolKit.StringShift(prefix + connector + suffix);
         }
 
         public static void SysoutFlowRelationship(Shape shape)
         {
+            Console.WriteLine(ToolKit.FlowElementNaming(shape));
+        }
 
-            Console.WriteLine(
-                "-- " +
-                ToolKit.QueryFlowRelationship(
-                shape,
-                VisGluedShapesFlags.visGluedShapesIncoming2D).Text +
-                " => " +
-                ToolKit.QueryFlowRelationship(
-                shape,
-                VisGluedShapesFlags.visGluedShapesOutgoing2D).Text +
-                " --");
+        public static Shape[] ShapeToArray(Shape shape)
+        {
 
+            List<Shape> shapes = new List<Shape>();
+
+            if (shape.Name.Contains("Sheet") && shape.Shapes.Count > 1)
+            {
+                foreach (Shape insideShape in shape.Shapes)
+                {
+                    shapes.Add(insideShape);
+                }
+            }
+            else
+            {
+                shapes.Add(shape);
+            }
+
+            return shapes.ToArray();
         }
 
     }
