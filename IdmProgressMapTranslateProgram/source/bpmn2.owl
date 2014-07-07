@@ -1,0 +1,3835 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xlink="http://www.w3.org/1999/xlink#" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xml:base="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <owl:DatatypeProperty rdf:ID="inputSetRefs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasLoopCondition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="any">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="globalChoreographyTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#choreography" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#initiatingParticipantRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:gateway rdf:ID="Perform_Client_QTO_Cost_Analysis">
+    <rdf:type rdf:resource="#gateway" />
+    <bpmn:hasGatewayDirection rdf:resource="#Diverging" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">529</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gateway.529</bpmn:name>
+  </bpmn:gateway>
+  <bpmn:gateway rdf:ID="Results_Complete_per_client_Request">
+    <rdf:type rdf:resource="#gateway" />
+    <bpmn:hasGatewayDirection rdf:resource="#Diverging" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">780</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gateway.780</bpmn:name>
+  </bpmn:gateway>
+  <owl:DatatypeProperty rdf:ID="inMessageRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isSequential">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="outgoing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="baseElementWithMixedContent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDocumentation" />
+        <owl:allValuesFrom rdf:resource="#documentation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasExtensionElements" />
+        <owl:onClass rdf:resource="#extensionElements" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#id" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="implementationRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasGatewayDirection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="operation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#inMessageRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#outMessageRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#errorRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#implementationRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:task rdf:ID="ER_QTO_to_Design">
+    <rdf:type rdf:resource="#task" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">404</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Object.404</bpmn:name>
+    <bpmn:outgoing rdf:datatype="xsd:string">QTO_Cost_Analysis_BIM_Submission_to_ER_QTO_to_Design</bpmn:outgoing>
+    <bpmn:incoming rdf:datatype="xsd:string">ER_QTO_to_Design_to_QTO_Cost_Analysis_BIM_Submission</bpmn:incoming>
+    <bpmn:outgoing rdf:datatype="xsd:string">QTO_Cost_Results_Complete_to_ER_QTO_to_Design</bpmn:outgoing>
+    <bpmn:incoming rdf:datatype="xsd:string">ER_QTO_to_Design_to_Evaluate_Quantities_and_Cost_Breakdown</bpmn:incoming>
+    <bpmn:incoming rdf:datatype="xsd:string">ER_QTO_to_Design_to_QTO_Cost_Results_Complete</bpmn:incoming>
+  </bpmn:task>
+  <owl:Class rdf:ID="callChoreography">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#choreographyActivity" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasParticipantAssociation" />
+        <owl:allValuesFrom rdf:resource="#participantAssociation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#calledChoreographyRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasConversationNode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="flowNode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#flowElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#incoming" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#outgoing" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:NamedIndividual rdf:ID="Standard">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#loopType" />
+  </owl:NamedIndividual>
+  <owl:ObjectProperty rdf:ID="hasComplexBehaviorDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:task rdf:ID="Prepare_Analysis_Report">
+    <rdf:type rdf:resource="#task" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">799</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Task.799</bpmn:name>
+  </bpmn:task>
+  <owl:ObjectProperty rdf:ID="hasProcessType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:task rdf:ID="Calculate_Quantities_and_Costs">
+    <rdf:type rdf:resource="#task" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">166</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Task.166</bpmn:name>
+    <bpmn:outgoing rdf:datatype="xsd:string">Construct_Recipe_DB_to_Calculate_Quantities_and_Costs</bpmn:outgoing>
+    <bpmn:outgoing rdf:datatype="xsd:string">Unit_Cost_DB_to_Calculate_Quantities_and_Costs</bpmn:outgoing>
+    <bpmn:outgoing rdf:datatype="xsd:string">ER_Design_to_QTO_to_Calculate_Quantities_and_Costs</bpmn:outgoing>
+    <bpmn:incoming rdf:datatype="xsd:string">Calculate_Quantities_and_Costs_to_QTO_Cost_Report</bpmn:incoming>
+    <bpmn:outgoing rdf:datatype="xsd:string">Unit_Cost_DB_to_Calculate_Quantities_and_Costs</bpmn:outgoing>
+    <bpmn:outgoing rdf:datatype="xsd:string">Construct_Recipe_DB_to_Calculate_Quantities_and_Costs</bpmn:outgoing>
+    <bpmn:incoming rdf:datatype="xsd:string">Calculate_Quantities_and_Costs_to_QTO_Cost_Report</bpmn:incoming>
+  </bpmn:task>
+  <owl:Class rdf:ID="dataStoreReference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#flowElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataState" />
+        <owl:onClass rdf:resource="#dataState" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#itemSubjectRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#dataStoreRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:messageFlow rdf:ID="ER_Design_to_QTO_to_Calculate_Quantities_and_Costs">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">328</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.328</bpmn:name>
+  </bpmn:messageFlow>
+  <owl:Class rdf:ID="userTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#task" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasRendering" />
+        <owl:allValuesFrom rdf:resource="#rendering" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasImplementation" />
+        <owl:allValuesFrom rdf:resource="#implementation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="inclusiveGateway">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#gateway" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#default" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="correlationPropertyRetrievalExpression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasMessagePath" />
+        <owl:onClass rdf:resource="#formalExpression" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#messageRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="scriptTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#task" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasScript" />
+        <owl:onClass rdf:resource="#script" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#scriptFormat" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:task rdf:ID="Cost_Targets">
+    <rdf:type rdf:resource="#task" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">317</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Object.317</bpmn:name>
+    <bpmn:incoming rdf:datatype="xsd:string">Cost_Targets_to_Review_Qty_Cost_Analysis_Results</bpmn:incoming>
+    <bpmn:incoming rdf:datatype="xsd:string">Cost_Targets_to_Evaluate_Quantities_and_Cost_Breakdown</bpmn:incoming>
+    <bpmn:incoming rdf:datatype="xsd:string">Cost_Targets_to_Review_Qty_Cost_Analysis_Results</bpmn:incoming>
+  </bpmn:task>
+  <owl:DatatypeProperty rdf:ID="interfaceRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="conversationNode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#participantRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#messageFlowRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasCorrelationKey" />
+        <owl:allValuesFrom rdf:resource="#correlationKey" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="isUnlimited">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="escalationEventDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#eventDefinition" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#escalationRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="globalBusinessRuleTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#globalTask" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasImplementation" />
+        <owl:allValuesFrom rdf:resource="#implementation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasDataOutput">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="attachedToRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:NamedIndividual rdf:ID="Unspecified">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#gatewayDirection" />
+  </owl:NamedIndividual>
+  <owl:DatatypeProperty rdf:ID="isCollection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:NamedIndividual rdf:ID="Physical">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#itemKind" />
+  </owl:NamedIndividual>
+  <owl:DatatypeProperty rdf:ID="innerMessageFlowRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="resourceRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#resourceRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasResourceParameterBinding" />
+        <owl:allValuesFrom rdf:resource="#resourceParameterBinding" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasResourceAssignmentExpression" />
+        <owl:onClass rdf:resource="#resourceAssignmentExpression" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="gatewayDirection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </owl:Class>
+  <owl:Class rdf:ID="resourceParameterBinding">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasExpression" />
+        <owl:onClass rdf:resource="#expression" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#parameterRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:task rdf:ID="Evaluate_Quantities_and_Cost_Breakdown">
+    <rdf:type rdf:resource="#task" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">559</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Task.559</bpmn:name>
+    <bpmn:outgoing rdf:datatype="xsd:string">ER_QTO_to_Design_to_Evaluate_Quantities_and_Cost_Breakdown</bpmn:outgoing>
+    <bpmn:outgoing rdf:datatype="xsd:string">QTO_Cost_Report_to_Evaluate_Quantities_and_Cost_Breakdown</bpmn:outgoing>
+    <bpmn:outgoing rdf:datatype="xsd:string">Cost_Targets_to_Evaluate_Quantities_and_Cost_Breakdown</bpmn:outgoing>
+  </bpmn:task>
+  <owl:Class rdf:ID="catchEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#event" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataOutput" />
+        <owl:allValuesFrom rdf:resource="#dataOutput" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataOutputAssociation" />
+        <owl:allValuesFrom rdf:resource="#dataOutputAssociation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasOutputSet" />
+        <owl:onClass rdf:resource="#outputSet" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasEventDefinition" />
+        <owl:allValuesFrom rdf:resource="#eventDefinition" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#eventDefinitionRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#parallelMultiple" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:messageFlow rdf:ID="Notify_Design_Feedback_to_Notify_Design_Feedback">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">659</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.659</bpmn:name>
+  </bpmn:messageFlow>
+  <bpmn:messageFlow rdf:ID="ER_Design_to_QTO_to_Initiate_QTO_Cost_Analysis">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">730</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.730</bpmn:name>
+  </bpmn:messageFlow>
+  <bpmn:lane rdf:ID="Building_Owner">
+    <rdf:type rdf:resource="#lane" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">25</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pool / Lane.25</bpmn:name>
+  </bpmn:lane>
+  <owl:Class rdf:ID="dataState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:NamedIndividual rdf:ID="Mixed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#gatewayDirection" />
+  </owl:NamedIndividual>
+  <owl:DatatypeProperty rdf:ID="operationRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasLane">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:messageFlow rdf:ID="to_QTO_Cost_Analysis_BIM_Submission">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">427</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.427</bpmn:name>
+  </bpmn:messageFlow>
+  <owl:ObjectProperty rdf:ID="hasResourceRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDocumentation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasFlowElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:messageFlow rdf:ID="Cost_Targets_to_Review_Qty_Cost_Analysis_Results">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">330</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.330</bpmn:name>
+  </bpmn:messageFlow>
+  <owl:Class rdf:ID="dataOutputAssociation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#dataAssociation" />
+  </owl:Class>
+  <owl:Class rdf:ID="assignment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasFrom" />
+        <owl:onClass rdf:resource="#expression" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasTo" />
+        <owl:onClass rdf:resource="#expression" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:NamedIndividual rdf:ID="Compensate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#method" />
+  </owl:NamedIndividual>
+  <bpmn:messageFlow rdf:ID="Export_BIM_for_Analysis_to_ER_Design_to_QTO">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">320</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow</bpmn:name>
+  </bpmn:messageFlow>
+  <owl:DatatypeProperty rdf:ID="messageRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasPartitionElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="isRequired">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="rendering">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+  </owl:Class>
+  <bpmn:task rdf:ID="Prepare_Submission_for_Review_Approval">
+    <rdf:type rdf:resource="#task" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">231</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Task.231</bpmn:name>
+  </bpmn:task>
+  <owl:NamedIndividual rdf:ID="Exclusive">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#eventGatewayType" />
+  </owl:NamedIndividual>
+  <owl:ObjectProperty rdf:ID="hasConversationAssociation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="partnerRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#participantRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="sendTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#task" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasImplementation" />
+        <owl:allValuesFrom rdf:resource="#implementation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#messageRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#operationRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="startEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#catchEvent" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#isInterrupting" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:sequenceFlow rdf:ID="Calculate_Quantities_and_Costs_to_Review_Qty_Cost_Analysis_Results">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">779</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.779</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:Class rdf:ID="dataObject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#flowElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataState" />
+        <owl:onClass rdf:resource="#dataState" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#itemSubjectRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#isCollection" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="intermediateCatchEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#catchEvent" />
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="signalRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <bpmn:task rdf:ID="Export_BIM_for_Analysis">
+    <rdf:type rdf:resource="#task" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">142</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Task</bpmn:name>
+    <bpmn:incoming rdf:datatype="xsd:string">Export_BIM_for_Analysis_to_ER_Design_to_QTO</bpmn:incoming>
+  </bpmn:task>
+  <owl:DatatypeProperty rdf:ID="categoryValueRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="initiatingParticipantRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="noneBehaviorEventRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="intermediateThrowEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#throwEvent" />
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasDataInput">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:NamedIndividual rdf:ID="Both">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#associationDirection" />
+    <rdf:type rdf:resource="#direction" />
+  </owl:NamedIndividual>
+  <owl:Class rdf:ID="method">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </owl:Class>
+  <owl:NamedIndividual rdf:ID="Backward">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#direction" />
+  </owl:NamedIndividual>
+  <owl:DatatypeProperty rdf:ID="oneBehaviorEventRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="globalConversation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#collaboration" />
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="partitionElementRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="testBefore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="activityRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="structureRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="errorRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasDataOutputAssociation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:NamedIndividual rdf:ID="WebService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#implementation" />
+  </owl:NamedIndividual>
+  <owl:ObjectProperty rdf:ID="hasConversationLink">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="activity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#flowNode" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasIoSpecification" />
+        <owl:onClass rdf:resource="#ioSpecification" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasProperty" />
+        <owl:allValuesFrom rdf:resource="#property" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataInputAssociation" />
+        <owl:allValuesFrom rdf:resource="#dataInputAssociation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataOutputAssociation" />
+        <owl:allValuesFrom rdf:resource="#dataOutputAssociation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasResourceRole" />
+        <owl:allValuesFrom rdf:resource="#resourceRole" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasLoopCharacteristics" />
+        <owl:allValuesFrom rdf:resource="#loopCharacteristics" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#isForCompensation" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#startQuantity" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#completionQuantity" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#default" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="dataObjectRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <bpmn:sequenceFlow rdf:ID="Prepare_Adjust_BIM_for_QTO_Cost_Est._to_Export_BIM_for_Analysis">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1059</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1059</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:Class rdf:ID="messageEventDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#eventDefinition" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#operationRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#messageRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="target">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="participantMultiplicity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#minimum" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#maximum" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:messageFlow rdf:ID="Cost_Targets_to_Evaluate_Quantities_and_Cost_Breakdown">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">998</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.998</bpmn:name>
+  </bpmn:messageFlow>
+  <bpmn:task rdf:ID="QTO_Cost_Report">
+    <rdf:type rdf:resource="#task" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">314</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Object.314</bpmn:name>
+    <bpmn:incoming rdf:datatype="xsd:string">QTO_Cost_Report_to_Review_Qty_Cost_Analysis_Results</bpmn:incoming>
+    <bpmn:outgoing rdf:datatype="xsd:string">QTO_Cost_Analysis_BIM_Submission_to_QTO_Cost_Report</bpmn:outgoing>
+    <bpmn:incoming rdf:datatype="xsd:string">QTO_Cost_Report_to_QTO_Cost_Analysis_BIM_Submission</bpmn:incoming>
+    <bpmn:outgoing rdf:datatype="xsd:string">QTO_Cost_Results_Complete_to_QTO_Cost_Report</bpmn:outgoing>
+    <bpmn:incoming rdf:datatype="xsd:string">QTO_Cost_Report_to_Evaluate_Quantities_and_Cost_Breakdown</bpmn:incoming>
+    <bpmn:outgoing rdf:datatype="xsd:string">Calculate_Quantities_and_Costs_to_QTO_Cost_Report</bpmn:outgoing>
+    <bpmn:outgoing rdf:datatype="xsd:string">Calculate_Quantities_and_Costs_to_QTO_Cost_Report</bpmn:outgoing>
+    <bpmn:incoming rdf:datatype="xsd:string">QTO_Cost_Report_to_Review_Qty_Cost_Analysis_Results</bpmn:incoming>
+    <bpmn:incoming rdf:datatype="xsd:string">QTO_Cost_Report_to_QTO_Cost_Results_Complete</bpmn:incoming>
+  </bpmn:task>
+  <owl:DatatypeProperty rdf:ID="processRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="default">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:NamedIndividual rdf:ID="Complex">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#behavior" />
+  </owl:NamedIndividual>
+  <owl:Class rdf:ID="partnerEntity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#participantRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="cancelRemainingInstances">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <bpmn:sequenceFlow rdf:ID="Results_Acceptable?_Yes_Prepare_Submission_for_Review_Approval">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1054</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1054</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:Class rdf:ID="artifact">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+  </owl:Class>
+  <owl:Class rdf:ID="interface">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasOperation" />
+        <owl:onClass rdf:resource="#operation" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#implementationRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasArtifact">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:sequenceFlow rdf:ID="Review_Qty_Cost_Analysis_Results_to_Results_Acceptable">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1049</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1049</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:ObjectProperty rdf:ID="hasLoopType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="startQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="choreographyTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#choreographyActivity" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#messageFlowRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="signalEventDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#eventDefinition" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#signalRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasRendering">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="category">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasCategoryValue" />
+        <owl:allValuesFrom rdf:resource="#categoryValue" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="resourceRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <bpmn:lane rdf:ID="Design_Team">
+    <rdf:type rdf:resource="#lane" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pool / Lane</bpmn:name>
+  </bpmn:lane>
+  <owl:Class rdf:ID="globalScriptTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#globalTask" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasScript" />
+        <owl:onClass rdf:resource="#script" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#scriptLanguage" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="messageFlowRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="eventGatewayType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </owl:Class>
+  <bpmn:sequenceFlow rdf:ID="Perform_Client_QTO_Cost_Analysis_Yes_Initiate_QTO_Cost_Analysis">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1044</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1044</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:ObjectProperty rdf:ID="hasResourceParameterBinding">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="correlationPropertyRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="minimum">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasOutputSet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:sequenceFlow rdf:ID="Valid_Qty_Cost_Analysis_BIM?_Yes_Perform_Client_QTO_Cost_Analysis">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1057</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1057</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:DatatypeProperty rdf:ID="instantiate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <bpmn:messageFlow rdf:ID="Calculate_Quantities_and_Costs_to_QTO_Cost_Report">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">934</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.934</bpmn:name>
+  </bpmn:messageFlow>
+  <owl:DatatypeProperty rdf:ID="endPointRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="humanPerformer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#performer" />
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="cancelActivity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasIoBinding">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="dataAssociation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#sourceRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#targetRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasTransformation" />
+        <owl:onClass rdf:resource="#formalExpression" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasAssignment" />
+        <owl:allValuesFrom rdf:resource="#assignment" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="text">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="innerParticipantRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasEventGatewayType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:lane rdf:ID="Exchange_2">
+    <rdf:type rdf:resource="#lane" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">37</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pool / Lane.37</bpmn:name>
+  </bpmn:lane>
+  <owl:ObjectProperty rdf:ID="hasLaneSet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:NamedIndividual rdf:ID="One">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#associationDirection" />
+    <rdf:type rdf:resource="#behavior" />
+  </owl:NamedIndividual>
+  <owl:Class rdf:ID="subConversation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#conversationNode" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasConversationNode" />
+        <owl:allValuesFrom rdf:resource="#conversationNode" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:NamedIndividual rdf:ID="All">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#behavior" />
+  </owl:NamedIndividual>
+  <owl:DatatypeProperty rdf:ID="supportedInterfaceRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="inputDataRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="capacity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasCorrelationKey">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="itemSubjectRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="dataStore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataState" />
+        <owl:onClass rdf:resource="#dataState" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#capacity" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#isUnlimited" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#itemSubjectRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="outputSetRefs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="parallelMultiple">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasInputDataItem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="receiveTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#task" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasImplementation" />
+        <owl:allValuesFrom rdf:resource="#implementation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#instantiate" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#messageRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#operationRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasEventDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:NamedIndividual rdf:ID="Private">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#processType" />
+  </owl:NamedIndividual>
+  <bpmn:sequenceFlow rdf:ID="QTO_Cost_Analysis_BIM_Submission_to_Validate_BIM_for_QTO">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">942</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.942</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:Class rdf:ID="callConversation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#conversationNode" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasParticipantAssociation" />
+        <owl:allValuesFrom rdf:resource="#participantAssociation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#calledCollaborationRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:NamedIndividual rdf:ID="MultiInstanceSequential">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#loopType" />
+  </owl:NamedIndividual>
+  <owl:DatatypeProperty rdf:ID="id">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="flowNodeRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="callableElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#supportedInterfaceRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasIoSpecification" />
+        <owl:onClass rdf:resource="#ioSpecification" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasIoBinding" />
+        <owl:allValuesFrom rdf:resource="#ioBinding" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:messageFlow rdf:ID="ER_Design_to_QTO_to_QTO_Cost_Analysis_BIM_Submission">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">426</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.426</bpmn:name>
+  </bpmn:messageFlow>
+  <owl:Class rdf:ID="escalation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#escalationCode" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#structureRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:gateway rdf:ID="Valid_Qty_Cost_Analysis_BIM">
+    <rdf:type rdf:resource="#gateway" />
+    <bpmn:hasGatewayDirection rdf:resource="#Diverging" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">453</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gateway.453</bpmn:name>
+  </bpmn:gateway>
+  <owl:Class rdf:ID="process">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#callableElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasAuditing" />
+        <owl:onClass rdf:resource="#auditing" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasMonitoring" />
+        <owl:onClass rdf:resource="#monitoring" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasProperty" />
+        <owl:allValuesFrom rdf:resource="#property" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasLaneSet" />
+        <owl:allValuesFrom rdf:resource="#laneSet" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasFlowElement" />
+        <owl:allValuesFrom rdf:resource="#flowElement" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasArtifact" />
+        <owl:allValuesFrom rdf:resource="#artifact" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasResourceRole" />
+        <owl:allValuesFrom rdf:resource="#resourceRole" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasCorrelationSubscription" />
+        <owl:allValuesFrom rdf:resource="#correlationSubscription" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#supports" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasProcessType" />
+        <owl:allValuesFrom rdf:resource="#processType" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#isClosed" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#isExecutable" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#definitionalCollaborationRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:sequenceFlow rdf:ID="Concept_Design_BIM_Complete_to_Prepare_Adjust_BIM_for_QTO_Cost_Est">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1058</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1058</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:NamedIndividual rdf:ID="Converging">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#gatewayDirection" />
+  </owl:NamedIndividual>
+  <bpmn:sequenceFlow rdf:ID="Results_Complete_per_client_Request?_No_Calculate_Quantities_and_Costs">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1041</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1041</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:Class rdf:ID="associationDirection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </owl:Class>
+  <bpmn:intermediateCatchEvent rdf:ID="QTO_Cost_Analysis_BIM_Submission">
+    <rdf:type rdf:resource="#intermediateCatchEvent" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">258</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intermediate Event.258</bpmn:name>
+    <bpmn:incoming rdf:datatype="xsd:string">QTO_Cost_Analysis_BIM_Submission_to_ER_Design_to_QTO</bpmn:incoming>
+    <bpmn:incoming rdf:datatype="xsd:string">QTO_Cost_Analysis_BIM_Submission_to_ER_QTO_to_Design</bpmn:incoming>
+    <bpmn:incoming rdf:datatype="xsd:string">QTO_Cost_Analysis_BIM_Submission_to_QTO_Cost_Report</bpmn:incoming>
+    <bpmn:outgoing rdf:datatype="xsd:string">ER_Design_to_QTO_to_QTO_Cost_Analysis_BIM_Submission</bpmn:outgoing>
+    <bpmn:outgoing rdf:datatype="xsd:string">ER_QTO_to_Design_to_QTO_Cost_Analysis_BIM_Submission</bpmn:outgoing>
+    <bpmn:outgoing rdf:datatype="xsd:string">QTO_Cost_Report_to_QTO_Cost_Analysis_BIM_Submission</bpmn:outgoing>
+  </bpmn:intermediateCatchEvent>
+  <bpmn:startEvent rdf:ID="Concept_Design_BIM_Complete">
+    <rdf:type rdf:resource="#startEvent" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">101</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Start Event</bpmn:name>
+  </bpmn:startEvent>
+  <bpmn:messageFlow rdf:ID="to_Evaluate_Quantities_and_Cost_Breakdown">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">887</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.887</bpmn:name>
+  </bpmn:messageFlow>
+  <owl:DatatypeProperty rdf:ID="sourceRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="timerEventDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#eventDefinition" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasTimeDate" />
+        <owl:onClass rdf:resource="#expression" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasTimeDuration" />
+        <owl:onClass rdf:resource="#expression" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasTimeCycle" />
+        <owl:onClass rdf:resource="#expression" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasMonitoring">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="loopDataInputRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="implicitThrowEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#throwEvent" />
+  </owl:Class>
+  <owl:NamedIndividual rdf:ID="Diverging">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#gatewayDirection" />
+  </owl:NamedIndividual>
+  <owl:DatatypeProperty rdf:ID="isImmediate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="ioSpecification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataInput" />
+        <owl:allValuesFrom rdf:resource="#dataInput" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataOutput" />
+        <owl:allValuesFrom rdf:resource="#dataOutput" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasInputSet" />
+        <owl:onClass rdf:resource="#inputSet" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasOutputSet" />
+        <owl:onClass rdf:resource="#outputSet" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="completionQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <bpmn:messageFlow rdf:ID="ER_Design_to_QTO_to_ER_Design_to_QTO">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">935</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.935</bpmn:name>
+  </bpmn:messageFlow>
+  <bpmn:task rdf:ID="Prepare_Design_Feedback">
+    <rdf:type rdf:resource="#task" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">587</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Task.587</bpmn:name>
+  </bpmn:task>
+  <owl:Class rdf:ID="group">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#artifact" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#categoryValueRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="escalationRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="outMessageRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="cancelEventDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#eventDefinition" />
+  </owl:Class>
+  <owl:Class rdf:ID="endEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#throwEvent" />
+  </owl:Class>
+  <owl:Class rdf:ID="choreographyActivity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#flowNode" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#participantRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasCorrelationKey" />
+        <owl:allValuesFrom rdf:resource="#correlationKey" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#initiatingParticipantRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasLoopType" />
+        <owl:allValuesFrom rdf:resource="#loopType" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasText">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="conversationLink">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#sourceRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#targetRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:sequenceFlow rdf:ID="Review_Qty_Cost_Analysis_Results_to_Results_Complete_per_client_Request">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1043</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1043</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:ObjectProperty rdf:ID="hasExtensionElements">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="task">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#activity" />
+  </owl:Class>
+  <bpmn:sequenceFlow rdf:ID="Perform_Client_QTO_Cost_Analysis_No_Evaluate_Quantities_and_Cost_Breakdown">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1045</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1045</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:DatatypeProperty rdf:ID="value">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="dataOutput">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataState" />
+        <owl:onClass rdf:resource="#dataState" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#itemSubjectRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#isCollection" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Ontology rdf:about="">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology" />
+    <rdfs:comment rdf:datatype="">BPMN 2.0</rdfs:comment>
+  </owl:Ontology>
+  <owl:ObjectProperty rdf:ID="hasAuditing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:messageFlow rdf:ID="to_QTO_Cost_Results_Complete">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1077</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.1077</bpmn:name>
+  </bpmn:messageFlow>
+  <owl:Class rdf:ID="linkEventDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#eventDefinition" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#source" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#target" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="parameterRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="outputSet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#dataOutputRefs" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#optionalOutputRefs" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#whileExecutingOutputRefs" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#inputSetRefs" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:NamedIndividual rdf:ID="None">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#associationDirection" />
+    <rdf:type rdf:resource="#loopType" />
+    <rdf:type rdf:resource="#behavior" />
+    <rdf:type rdf:resource="#processType" />
+    <rdf:type rdf:resource="#direction" />
+  </owl:NamedIndividual>
+  <bpmn:sequenceFlow rdf:ID="Validate_BIM_for_QTO_to_Valid_Qty_Cost_Analysis_BIM">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1048</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1048</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:Class rdf:ID="performer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#resourceRole" />
+  </owl:Class>
+  <bpmn:sequenceFlow rdf:ID="Initiate_QTO_Cost_Analysis_to_Calculate_Quantities_and_Costs">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1040</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1040</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:Class rdf:ID="multiInstanceLoopCharacteristics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#loopCharacteristics" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasLoopCardinality" />
+        <owl:onClass rdf:resource="#expression" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#loopDataInputRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#loopDataOutputRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasInputDataItem" />
+        <owl:onClass rdf:resource="#dataInput" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasOutputDataItem" />
+        <owl:onClass rdf:resource="#dataOutput" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasComplexBehaviorDefinition" />
+        <owl:allValuesFrom rdf:resource="#complexBehaviorDefinition" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasCompletionCondition" />
+        <owl:onClass rdf:resource="#expression" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#isSequential" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasBehavior" />
+        <owl:allValuesFrom rdf:resource="#behavior" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#oneBehaviorEventRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#noneBehaviorEventRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="participantAssociation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#innerParticipantRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#outerParticipantRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="definitionalCollaborationRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasCondition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="error">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#errorCode" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#structureRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="maximum">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="itemRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <bpmn:lane rdf:ID="Exchange_1">
+    <rdf:type rdf:resource="#lane" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pool / Lane.13</bpmn:name>
+  </bpmn:lane>
+  <owl:Class rdf:ID="resource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasResourceParameter" />
+        <owl:allValuesFrom rdf:resource="#resourceParameter" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="conversationAssociation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#innerConversationNodeRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#outerConversationNodeRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasOrdering">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="dataInputAssociation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#dataAssociation" />
+  </owl:Class>
+  <owl:Class rdf:ID="extension">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDocumentation" />
+        <owl:allValuesFrom rdf:resource="#documentation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#definition" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#mustUnderstand" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasCategoryValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:endEvent rdf:ID="Proceed_to_Design_Development">
+    <rdf:type rdf:resource="#endEvent" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">662</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">End Event</bpmn:name>
+  </bpmn:endEvent>
+  <owl:Class rdf:ID="loopType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </owl:Class>
+  <bpmn:sequenceFlow rdf:ID="Results_Acceptable?_No_Prepare_Adjust_BIM_for_QTO_Cost_Est">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1050</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1050</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:Class rdf:ID="processType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="definition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="errorCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <bpmn:sequenceFlow rdf:ID="Prepare_Design_Feedback_to_Notify_Design_Feedback">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1063</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1063</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:ObjectProperty rdf:ID="hasMethod">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCorrelationPropertyBinding">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:NamedIndividual rdf:ID="MultiInstanceParallel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#loopType" />
+  </owl:NamedIndividual>
+  <owl:ObjectProperty rdf:ID="hasMessagePath">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="errorEventDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#eventDefinition" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#errorRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:messageFlow rdf:ID="QTO_Cost_Analysis_BIM_Submission_to_ER_Design_to_QTO">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">355</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.355</bpmn:name>
+  </bpmn:messageFlow>
+  <owl:ObjectProperty rdf:ID="hasInputSet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:gateway rdf:ID="QTO_Cost_Performance_Accepted">
+    <rdf:type rdf:resource="#gateway" />
+    <bpmn:hasGatewayDirection rdf:resource="#Diverging" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">286</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gateway.286</bpmn:name>
+  </bpmn:gateway>
+  <owl:ObjectProperty rdf:ID="hasDirection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="participant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#interfaceRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#endPointRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasParticipantMultiplicity" />
+        <owl:onClass rdf:resource="#participantMultiplicity" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#processRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="signal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#structureRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="sequenceFlow">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#flowElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasConditionExpression" />
+        <owl:onClass rdf:resource="#expression" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#sourceRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#targetRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#isImmediate" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="throwEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#event" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataInput" />
+        <owl:allValuesFrom rdf:resource="#dataInput" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataInputAssociation" />
+        <owl:allValuesFrom rdf:resource="#dataInputAssociation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasInputSet" />
+        <owl:onClass rdf:resource="#inputSet" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasEventDefinition" />
+        <owl:allValuesFrom rdf:resource="#eventDefinition" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#eventDefinitionRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="event">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#flowNode" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasProperty" />
+        <owl:allValuesFrom rdf:resource="#property" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="relationship">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#source" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#target" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#type" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDirection" />
+        <owl:allValuesFrom rdf:resource="#direction" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="calledCollaborationRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:NamedIndividual rdf:ID="Forward">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#direction" />
+  </owl:NamedIndividual>
+  <owl:DatatypeProperty rdf:ID="waitForCompletion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:NamedIndividual rdf:ID="Parallel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#ordering" />
+    <rdf:type rdf:resource="#eventGatewayType" />
+  </owl:NamedIndividual>
+  <owl:ObjectProperty rdf:ID="hasTimeCycle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:task rdf:ID="Validate_BIM_for_QTO">
+    <rdf:type rdf:resource="#task" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">429</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Task.429</bpmn:name>
+  </bpmn:task>
+  <owl:Class rdf:ID="correlationProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasCorrelationPropertyRetrievalExpression" />
+        <owl:onClass rdf:resource="#correlationPropertyRetrievalExpression" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#type" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="whileExecutingOutputRefs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="triggeredByEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasOutputDataItem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="expression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElementWithMixedContent" />
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="outputDataRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasParticipant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="callActivity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#activity" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#calledElement" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasTimeDuration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="escalationCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasDataState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="eventDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasCorrelationPropertyRetrievalExpression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasActivationCondition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="boundaryEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#catchEvent" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#cancelActivity" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#attachedToRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="monitoring">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasBehavior">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:messageFlow rdf:ID="Unit_Cost_DB_to_Calculate_Quantities_and_Costs">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">327</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.327</bpmn:name>
+  </bpmn:messageFlow>
+  <owl:DatatypeProperty rdf:ID="optionalOutputRefs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isInterrupting">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="property">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataState" />
+        <owl:onClass rdf:resource="#dataState" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#itemSubjectRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="calledElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:NamedIndividual rdf:ID="unspecified">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#implementation" />
+  </owl:NamedIndividual>
+  <owl:Class rdf:ID="eventBasedGateway">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#gateway" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#instantiate" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasEventGatewayType" />
+        <owl:allValuesFrom rdf:resource="#eventGatewayType" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="message">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#itemRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasImplementation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="correlationPropertyBinding">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataPath" />
+        <owl:onClass rdf:resource="#formalExpression" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#correlationPropertyRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="optionalInputRefs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="endPoint">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="correlationKeyRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasLoopCharacteristics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasAssignment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasChildLaneSet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="documentation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#id" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#textFormat" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="scriptLanguage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasResourceParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="serviceTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#task" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasImplementation" />
+        <owl:allValuesFrom rdf:resource="#implementation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#operationRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasScript">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasResourceAssignmentExpression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="calledChoreographyRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="behavior">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </owl:Class>
+  <owl:Class rdf:ID="laneSet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasLane" />
+        <owl:allValuesFrom rdf:resource="#lane" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="extensionElements">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </owl:Class>
+  <owl:Class rdf:ID="conditionalEventDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#eventDefinition" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasCondition" />
+        <owl:allValuesFrom rdf:resource="#expression" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="dataOutputRefs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="baseElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDocumentation" />
+        <owl:allValuesFrom rdf:resource="#documentation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasExtensionElements" />
+        <owl:onClass rdf:resource="#extensionElements" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#id" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:NamedIndividual rdf:ID="Image">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#method" />
+  </owl:NamedIndividual>
+  <bpmn:messageFlow rdf:ID="QTO_Cost_Report_to_Review_Qty_Cost_Analysis_Results">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">329</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.329</bpmn:name>
+  </bpmn:messageFlow>
+  <owl:Class rdf:ID="choreography">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#collaboration" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasFlowElement" />
+        <owl:allValuesFrom rdf:resource="#flowElement" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="type">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="textFormat">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasMessageFlow">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="subProcess">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#activity" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasLaneSet" />
+        <owl:allValuesFrom rdf:resource="#laneSet" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasFlowElement" />
+        <owl:allValuesFrom rdf:resource="#flowElement" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasArtifact" />
+        <owl:allValuesFrom rdf:resource="#artifact" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#triggeredByEvent" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ordering">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </owl:Class>
+  <bpmn:messageFlow rdf:ID="QTO_Cost_Results_Complete_to">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">884</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.884</bpmn:name>
+  </bpmn:messageFlow>
+  <owl:ObjectProperty rdf:ID="hasAssociationDirection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:task rdf:ID="ER_Design_to_QTO">
+    <rdf:type rdf:resource="#task" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">302</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Object</bpmn:name>
+    <bpmn:outgoing rdf:datatype="xsd:string">Export_BIM_for_Analysis_to_ER_Design_to_QTO</bpmn:outgoing>
+    <bpmn:incoming rdf:datatype="xsd:string">ER_Design_to_QTO_to_Calculate_Quantities_and_Costs</bpmn:incoming>
+    <bpmn:outgoing rdf:datatype="xsd:string">QTO_Cost_Analysis_BIM_Submission_to_ER_Design_to_QTO</bpmn:outgoing>
+    <bpmn:incoming rdf:datatype="xsd:string">ER_Design_to_QTO_to_QTO_Cost_Analysis_BIM_Submission</bpmn:incoming>
+    <bpmn:outgoing rdf:datatype="xsd:string">Initiate_QTO_Cost_Analysis_to_ER_Design_to_QTO</bpmn:outgoing>
+    <bpmn:incoming rdf:datatype="xsd:string">ER_Design_to_QTO_to_Initiate_QTO_Cost_Analysis</bpmn:incoming>
+    <bpmn:incoming rdf:datatype="xsd:string">ER_Design_to_QTO_to_ER_Design_to_QTO</bpmn:incoming>
+    <bpmn:outgoing rdf:datatype="xsd:string">ER_Design_to_QTO_to_ER_Design_to_QTO</bpmn:outgoing>
+  </bpmn:task>
+  <owl:Class rdf:ID="terminateEventDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#eventDefinition" />
+  </owl:Class>
+  <bpmn:subProcess rdf:ID="Prepare_Adjust_BIM_for_QTO_Cost_Est">
+    <rdf:type rdf:resource="#subProcess" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">118</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Collapsed Sub-Process.16</bpmn:name>
+  </bpmn:subProcess>
+  <owl:Class rdf:ID="complexBehaviorDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasCondition" />
+        <owl:onClass rdf:resource="#formalExpression" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasEvent" />
+        <owl:onClass rdf:resource="#implicitThrowEvent" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:task rdf:ID="Unit_Cost_DB">
+    <rdf:type rdf:resource="#task" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">308</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Object.308</bpmn:name>
+    <bpmn:incoming rdf:datatype="xsd:string">Unit_Cost_DB_to_Calculate_Quantities_and_Costs</bpmn:incoming>
+    <bpmn:incoming rdf:datatype="xsd:string">Unit_Cost_DB_to_Calculate_Quantities_and_Costs</bpmn:incoming>
+  </bpmn:task>
+  <owl:DatatypeProperty rdf:ID="loopDataOutputRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="evaluatesToTypeRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="outerParticipantRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="subChoreography">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#choreographyActivity" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasFlowElement" />
+        <owl:allValuesFrom rdf:resource="#flowElement" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasArtifact" />
+        <owl:allValuesFrom rdf:resource="#artifact" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasTransformation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="mustUnderstand">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="supports">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="exclusiveGateway">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#gateway" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#default" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasParticipantAssociation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="eventDefinitionRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:ID="hasItemKind">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:sequenceFlow rdf:ID="QTO_Cost_Results_Complete_to_Evaluate_Quantities_and_Cost_Breakdown">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">886</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.886</bpmn:name>
+  </bpmn:sequenceFlow>
+  <bpmn:intermediateCatchEvent rdf:ID="QTO_Cost_Results_Complete">
+    <rdf:type rdf:resource="#intermediateCatchEvent" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">824</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intermediate Event.824</bpmn:name>
+    <bpmn:incoming rdf:datatype="xsd:string">QTO_Cost_Results_Complete_to_ER_QTO_to_Design</bpmn:incoming>
+    <bpmn:incoming rdf:datatype="xsd:string">QTO_Cost_Results_Complete_to_QTO_Cost_Report</bpmn:incoming>
+    <bpmn:outgoing rdf:datatype="xsd:string">ER_QTO_to_Design_to_QTO_Cost_Results_Complete</bpmn:outgoing>
+    <bpmn:outgoing rdf:datatype="xsd:string">QTO_Cost_Report_to_QTO_Cost_Results_Complete</bpmn:outgoing>
+  </bpmn:intermediateCatchEvent>
+  <bpmn:sequenceFlow rdf:ID="Valid_Qty_Cost_Analysis_BIM?_No_BIM_Rejected">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1056</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1056</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:Class rdf:ID="collaboration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasParticipant" />
+        <owl:allValuesFrom rdf:resource="#participant" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasMessageFlow" />
+        <owl:allValuesFrom rdf:resource="#messageFlow" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasArtifact" />
+        <owl:allValuesFrom rdf:resource="#artifact" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasConversationNode" />
+        <owl:allValuesFrom rdf:resource="#conversationNode" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasConversationAssociation" />
+        <owl:allValuesFrom rdf:resource="#conversationAssociation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasParticipantAssociation" />
+        <owl:allValuesFrom rdf:resource="#participantAssociation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasMessageFlowAssociation" />
+        <owl:allValuesFrom rdf:resource="#messageFlowAssociation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasCorrelationKey" />
+        <owl:allValuesFrom rdf:resource="#correlationKey" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#choreographyRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasConversationLink" />
+        <owl:allValuesFrom rdf:resource="#conversationLink" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#isClosed" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasCompletionCondition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:NamedIndividual rdf:ID="Public">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#processType" />
+  </owl:NamedIndividual>
+  <owl:DatatypeProperty rdf:ID="whileExecutingInputRefs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="flowElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasAuditing" />
+        <owl:onClass rdf:resource="#auditing" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasMonitoring" />
+        <owl:onClass rdf:resource="#monitoring" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#categoryValueRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="parallelGateway">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#gateway" />
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasExpression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:NamedIndividual rdf:ID="Sequential">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#ordering" />
+  </owl:NamedIndividual>
+  <owl:Class rdf:ID="correlationKey">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#correlationPropertyRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="loopCharacteristics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+  </owl:Class>
+  <bpmn:sequenceFlow rdf:ID="Notify_Design_Feedback_to_QTO_Cost_Performance_Accepted">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1052</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1052</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:DatatypeProperty rdf:ID="targetRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="lane">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasPartitionElement" />
+        <owl:onClass rdf:resource="#baseElement" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#flowNodeRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasChildLaneSet" />
+        <owl:onClass rdf:resource="#laneSet" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#partitionElementRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasConditionExpression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDataPath">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="transaction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#subProcess" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasMethod" />
+        <owl:allValuesFrom rdf:resource="#method" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="isClosed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <bpmn:sequenceFlow rdf:ID="Prepare_Submission_for_Review_Approval_to_QTO_Cost_Analysis_BIM_Submission">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1062</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1062</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:DatatypeProperty rdf:ID="isForCompensation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="scriptFormat">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="auditing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+  </owl:Class>
+  <bpmn:intermediateCatchEvent rdf:ID="Notify_Design_Feedback">
+    <rdf:type rdf:resource="#intermediateCatchEvent" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">612</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intermediate Event.612</bpmn:name>
+    <bpmn:incoming rdf:datatype="xsd:string">Notify_Design_Feedback_to_Notify_Design_Feedback</bpmn:incoming>
+    <bpmn:outgoing rdf:datatype="xsd:string">Notify_Design_Feedback_to_Notify_Design_Feedback</bpmn:outgoing>
+  </bpmn:intermediateCatchEvent>
+  <owl:Class rdf:ID="adHocSubProcess">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#subProcess" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasCompletionCondition" />
+        <owl:onClass rdf:resource="#expression" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#cancelRemainingInstances" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasOrdering" />
+        <owl:allValuesFrom rdf:resource="#ordering" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="messageFlowAssociation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#innerMessageFlowRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#outerMessageFlowRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:messageFlow rdf:ID="BIM_Rejected_to_BIM_Rejected">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">518</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.518</bpmn:name>
+  </bpmn:messageFlow>
+  <owl:Class rdf:ID="gateway">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#flowNode" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasGatewayDirection" />
+        <owl:allValuesFrom rdf:resource="#gatewayDirection" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:sequenceFlow rdf:ID="Prepare_Analysis_Report_to_QTO_Cost_Results_Complete">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">883</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.883</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:ObjectProperty rdf:ID="hasLoopCardinality">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:intermediateCatchEvent rdf:ID="Initiate_QTO_Cost_Analysis">
+    <rdf:type rdf:resource="#intermediateCatchEvent" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">627</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intermediate Event.627</bpmn:name>
+    <bpmn:incoming rdf:datatype="xsd:string">Initiate_QTO_Cost_Analysis_to_ER_Design_to_QTO</bpmn:incoming>
+    <bpmn:outgoing rdf:datatype="xsd:string">ER_Design_to_QTO_to_Initiate_QTO_Cost_Analysis</bpmn:outgoing>
+  </bpmn:intermediateCatchEvent>
+  <owl:Class rdf:ID="resourceParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#type" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#isRequired" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="dataObjectReference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#flowElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataState" />
+        <owl:onClass rdf:resource="#dataState" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#itemSubjectRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#dataObjectRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasOperation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="itemDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#rootElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#structureRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#isCollection" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasItemKind" />
+        <owl:allValuesFrom rdf:resource="#itemKind" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="rootElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+  </owl:Class>
+  <bpmn:sequenceFlow rdf:ID="BIM_Rejected_to_Prepare_Adjust_BIM_for_QTO_Cost_Est">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">900</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.900</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:ObjectProperty rdf:ID="hasMessageFlowAssociation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="ioBinding">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#operationRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#inputDataRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#outputDataRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:sequenceFlow rdf:ID="QTO_Cost_Performance_Accepted?_No_Prepare_Adjust_BIM_for_QTO_Cost_Est">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1051</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1051</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:ObjectProperty rdf:ID="hasTimeDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:lane rdf:ID="Analysis_Consultants">
+    <rdf:type rdf:resource="#lane" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">49</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pool / Lane.49</bpmn:name>
+  </bpmn:lane>
+  <owl:Class rdf:ID="complexGateway">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#gateway" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasActivationCondition" />
+        <owl:onClass rdf:resource="#expression" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#default" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:task rdf:ID="Construct_Recipe_DB">
+    <rdf:type rdf:resource="#task" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">311</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Object.311</bpmn:name>
+    <bpmn:incoming rdf:datatype="xsd:string">Construct_Recipe_DB_to_Calculate_Quantities_and_Costs</bpmn:incoming>
+    <bpmn:incoming rdf:datatype="xsd:string">Construct_Recipe_DB_to_Calculate_Quantities_and_Costs</bpmn:incoming>
+  </bpmn:task>
+  <owl:DatatypeProperty rdf:ID="choreographyRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="manualTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#task" />
+  </owl:Class>
+  <owl:Class rdf:ID="direction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="loopMaximum">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="messageFlow">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#sourceRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#targetRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#messageRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="isExecutable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="itemKind">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </owl:Class>
+  <owl:Class rdf:ID="globalTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#callableElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasResourceRole" />
+        <owl:allValuesFrom rdf:resource="#resourceRole" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="inputSet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#dataInputRefs" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#optionalInputRefs" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#whileExecutingInputRefs" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#outputSetRefs" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="potentialOwner">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#humanPerformer" />
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="incoming">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:NamedIndividual rdf:ID="Information">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#itemKind" />
+  </owl:NamedIndividual>
+  <owl:Class rdf:ID="textAnnotation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#artifact" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasText" />
+        <owl:onClass rdf:resource="#text" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#textFormat" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="correlationSubscription">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasCorrelationPropertyBinding" />
+        <owl:allValuesFrom rdf:resource="#correlationPropertyBinding" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#correlationKeyRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="standardLoopCharacteristics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#loopCharacteristics" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasLoopCondition" />
+        <owl:allValuesFrom rdf:resource="#expression" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#testBefore" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#loopMaximum" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="source">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="innerConversationNodeRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="outerMessageFlowRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="association">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#artifact" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#sourceRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#targetRef" />
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasAssociationDirection" />
+        <owl:allValuesFrom rdf:resource="#associationDirection" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="implementation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </owl:Class>
+  <owl:NamedIndividual rdf:ID="Store">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdf:type rdf:resource="#method" />
+  </owl:NamedIndividual>
+  <bpmn:task rdf:ID="Review_Qty_Cost_Analysis_Results">
+    <rdf:type rdf:resource="#task" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">190</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Task.190</bpmn:name>
+    <bpmn:outgoing rdf:datatype="xsd:string">QTO_Cost_Report_to_Review_Qty_Cost_Analysis_Results</bpmn:outgoing>
+    <bpmn:outgoing rdf:datatype="xsd:string">Cost_Targets_to_Review_Qty_Cost_Analysis_Results</bpmn:outgoing>
+    <bpmn:outgoing rdf:datatype="xsd:string">QTO_Cost_Report_to_Review_Qty_Cost_Analysis_Results</bpmn:outgoing>
+    <bpmn:outgoing rdf:datatype="xsd:string">Cost_Targets_to_Review_Qty_Cost_Analysis_Results</bpmn:outgoing>
+  </bpmn:task>
+  <owl:Class rdf:ID="conversation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#conversationNode" />
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasParticipantMultiplicity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="resourceAssignmentExpression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasExpression" />
+        <owl:onClass rdf:resource="#expression" />
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <bpmn:sequenceFlow rdf:ID="Results_Complete_per_client_Request?_Yes_Prepare_Analysis_Report">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1042</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1042</bpmn:name>
+  </bpmn:sequenceFlow>
+  <bpmn:sequenceFlow rdf:ID="QTO_Cost_Performance_Accepted?_Yes_Proceed_to_Design_Development">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1053</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow</bpmn:name>
+  </bpmn:sequenceFlow>
+  <bpmn:messageFlow rdf:ID="QTO_Cost_Analysis_BIM_Submission_to">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">410</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.410</bpmn:name>
+  </bpmn:messageFlow>
+  <owl:Class rdf:ID="dataInput">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasDataState" />
+        <owl:onClass rdf:resource="#dataState" />
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#name" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#itemSubjectRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#isCollection" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="script">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </owl:Class>
+  <owl:Class rdf:ID="globalUserTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#globalTask" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasRendering" />
+        <owl:allValuesFrom rdf:resource="#rendering" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasImplementation" />
+        <owl:allValuesFrom rdf:resource="#implementation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="categoryValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#baseElement" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#value" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="globalManualTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#globalTask" />
+  </owl:Class>
+  <bpmn:sequenceFlow rdf:ID="Export_BIM_for_Analysis_to_Calculate_Quantities_and_Costs">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1060</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1060</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:DatatypeProperty rdf:ID="outerConversationNodeRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="language">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <bpmn:sequenceFlow rdf:ID="Evaluate_Quantities_and_Cost_Breakdown_to_Prepare_Design_Feedback">
+    <rdf:type rdf:resource="#sequenceFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1064</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence Flow.1064</bpmn:name>
+  </bpmn:sequenceFlow>
+  <owl:ObjectProperty rdf:ID="hasDataInputAssociation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="participantRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <bpmn:messageFlow rdf:ID="Construct_Recipe_DB_to_Calculate_Quantities_and_Costs">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">326</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.326</bpmn:name>
+  </bpmn:messageFlow>
+  <bpmn:intermediateCatchEvent rdf:ID="BIM_Rejected">
+    <rdf:type rdf:resource="#intermediateCatchEvent" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">485</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intermediate Event.485</bpmn:name>
+    <bpmn:incoming rdf:datatype="xsd:string">BIM_Rejected_to_BIM_Rejected</bpmn:incoming>
+    <bpmn:outgoing rdf:datatype="xsd:string">BIM_Rejected_to_BIM_Rejected</bpmn:outgoing>
+  </bpmn:intermediateCatchEvent>
+  <owl:ObjectProperty rdf:ID="hasIoSpecification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCorrelationSubscription">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="dataStoreRef">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+  <owl:Class rdf:ID="compensateEventDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#eventDefinition" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#waitForCompletion" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#activityRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="formalExpression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#expression" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#language" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#evaluatesToTypeRef" />
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasFrom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+  </owl:ObjectProperty>
+  <owl:Class rdf:ID="businessRuleTask">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="#task" />
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+        <owl:onProperty rdf:resource="#hasImplementation" />
+        <owl:allValuesFrom rdf:resource="#implementation" />
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <bpmn:messageFlow rdf:ID="Initiate_QTO_Cost_Analysis_to_ER_Design_to_QTO">
+    <rdf:type rdf:resource="#messageFlow" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">728</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Message Flow.728</bpmn:name>
+  </bpmn:messageFlow>
+  <bpmn:gateway rdf:ID="Results_Acceptable">
+    <rdf:type rdf:resource="#gateway" />
+    <bpmn:hasGatewayDirection rdf:resource="#Diverging" />
+    <bpmn:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">214</bpmn:id>
+    <bpmn:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gateway</bpmn:name>
+  </bpmn:gateway>
+  <owl:DatatypeProperty rdf:ID="dataInputRefs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+  </owl:DatatypeProperty>
+</rdf:RDF>
+<!--This file has been generated by the OwlDotNetApi.-->
